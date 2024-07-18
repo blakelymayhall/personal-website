@@ -1,0 +1,87 @@
+/* colors:: https://coolors.co/e8f1f2-15b097-513c2c-28190e-044389 */
+
+@font-face {
+    font-family: 'Font1';
+    src: url('fonts/Caveat-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+}
+
+body, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#mainContainer {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: max(18vw,260px) 82vw;
+    grid-template-rows: 8vh 10vh 82vh;
+}
+
+#sideBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(81, 60, 44);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    color: rgb(232, 241, 242);
+    font-family: 'Font1';
+}
+
+#profPic {
+    height: 30%;
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    margin-top: 5vh;
+    border-radius: 50%;
+}
+
+#profName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+    font-size: x-large;
+}
+
+#sideBarLinks {
+    height: 60%;
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 8vh;
+    font-size: medium;
+}
+
+#sideBarSocials {
+    height: 10%;
+    display: flex;
+    gap: 0.8rem;
+    font-size: medium;
+}
+
+#headerBar {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background: white;
+}
+
+#mainContentWindow {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background: rgb(232, 241, 242);
+}
