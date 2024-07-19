@@ -77,6 +77,16 @@ ul {
     font-size: medium;
 }
 
+#sideBarSocials a {
+    width: 100%;
+    height: 100%;
+}
+
+#linkedInImg, #githubImg {
+    height: 70%;
+    aspect-ratio: 1 / 1;
+}
+
 #headerBar {
     grid-column-start: 2;
     grid-column-end: 3;
