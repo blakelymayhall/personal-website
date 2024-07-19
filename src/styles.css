@@ -1,8 +1,14 @@
 /* colors:: https://coolors.co/e8f1f2-15b097-513c2c-28190e-044389 */
 
 @font-face {
-    font-family: 'Font1';
-    src: url('fonts/Caveat-VariableFont_wght.ttf') format('truetype');
+    font-family: 'RobotoBold';
+    src: url('fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto/Roboto-Regular.ttf') format('truetype');
     font-style: normal;
 }
 
@@ -33,7 +39,7 @@ ul {
     grid-row-start: 1;
     grid-row-end: 4;
     color: rgb(232, 241, 242);
-    font-family: 'Font1';
+    font-family: 'Roboto';
 }
 
 #profPic {
@@ -50,6 +56,7 @@ ul {
     align-items: center;
     margin-top: 1vh;
     font-size: x-large;
+    font-family: 'RobotoBold';
 }
 
 #sideBarLinks {
