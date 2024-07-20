@@ -1,14 +1,14 @@
-const sideBarFactory = () => {
+import { profilePictureOverlayFactory } from "./profilePictureOverlay";
 
+const sideBarFactory = () => {
     // Data
     //------------------------------------------------------------------------
-    let activeMenuOption = menuOptions.HOME;
+    let profilePictureOverlay = profilePictureOverlayFactory();
     const documentMenuOptions = document.querySelectorAll("#sideBarLinks p");
-    
+    let activeMenuOption = menuOptions.HOME;
     const getActiveMenuOption = () => {
         return activeMenuOption;
     };
-
     //------------------------------------------------------------------------
 
     // Events
@@ -18,6 +18,11 @@ const sideBarFactory = () => {
             activeMenuOption = `#${documentMenuOption.id}`;
             applyActiveMenuOptionDecor(activeMenuOption);
         });
+    });
+
+    const profPicture = document.querySelector("#profPic");
+    profPicture.addEventListener("click", () => {
+        profilePictureOverlay.activate();
     });
     //------------------------------------------------------------------------
 
@@ -38,9 +43,11 @@ const sideBarFactory = () => {
     //------------------------------------------------------------------------
 
     // Export Functions
+    //------------------------------------------------------------------------
     return {
         getActiveMenuOption,
     };
+    //------------------------------------------------------------------------
 };
 
 const menuOptions = {

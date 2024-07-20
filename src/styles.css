@@ -29,6 +29,27 @@ ul {
     grid-template-rows: 8vh 10vh 82vh;
 }
 
+#profPicOverlay {
+    position: absolute;
+    background-image: url("assets/IMG_5527.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 50%;
+    width: 400px;
+    min-width: 400px;
+    aspect-ratio: 1 / 1;
+    display: none;
+    flex-direction: column;
+    margin-top: 10vh;
+    margin-left: max(260px, 40vw);
+    gap: 2%;
+    cursor: pointer; 
+}
+
 #sideBar {
     display: flex;
     flex-direction: column;
@@ -48,6 +69,7 @@ ul {
     aspect-ratio: 1 / 1;
     margin-top: 5vh;
     border-radius: 50%;
+    cursor: pointer; 
 }
 
 #profName {

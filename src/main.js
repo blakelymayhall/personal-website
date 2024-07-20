@@ -5,4 +5,3 @@ import { sideBarFactory } from "./sideBar";
 
 //initPageLoad();
 let sideBar = sideBarFactory();
-
