@@ -70,6 +70,10 @@ ul {
     font-size: medium;
 }
 
+#sideBarLinks p {
+    cursor: pointer; 
+}
+
 #sideBarSocials {
     height: 10%;
     display: flex;

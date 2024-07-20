@@ -1,0 +1,1 @@
+(()=>{"use strict";const e="#homeLink";(()=>{let t=e;const o=document.querySelectorAll("#sideBarLinks p");o.forEach((e=>{e.addEventListener("click",(()=>{t=`#${e.id}`,c(t)}))}));const c=e=>{o.forEach((e=>{e.style.cssText="text-decoration:none;"})),document.querySelector(e).style.cssText="text-decoration:underline;font-family:'RobotoBold';"};c(t)})()})();
