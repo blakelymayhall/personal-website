@@ -27,7 +27,19 @@ ul {
     height: 100vh;
     grid-template-columns: max(18vw,260px) 82vw;
     grid-template-rows: 8vh 10vh 82vh;
+    flex-direction: column;
 }
+
+#mainContentWindow {
+    width: 100%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background: rgb(232, 241, 242);
+}
+
+/* #region Desktop Side Bar */
 
 #profPicOverlay {
     position: absolute;
@@ -108,10 +120,100 @@ ul {
     height: 100%;
 }
 
-#linkedInImg, #githubImg {
+.linkedInImg, .githubImg {
     height: 70%;
     aspect-ratio: 1 / 1;
 }
+
+/* #endregion */
+
+/* #region Mobile Header Bar */
+
+#mobileHeaderBar {
+    background: rgb(81, 60, 44);
+    width: 100%;
+    height: 20%;
+    font-family: 'Roboto';
+    display: none;
+    grid-template-columns: 33vw 33vw 33vw;
+    grid-template-rows: 45% 45% 10%;
+    color: rgb(232, 241, 242);
+}
+
+#mobileProfPicWrapper {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#mobileProfPic {
+    width: 30vw;
+    aspect-ratio: 1 / 1;
+    margin-top: 2vh;
+    border-radius: 50%;
+}
+
+#mobileProfNameWrapper {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -2vh;
+    width: 100%;
+    height: 100%;
+}
+
+#mobileProfName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+    font-size: x-large;
+    font-family: 'RobotoBold';
+    font-size: 3rem;
+}
+
+#mobileLinkedInImgButton {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+#mobileGithubImgButton {
+    margin-bottom: 2vh;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#mobileLinkedInImgButton .linkedInImg, #mobileGithubImgButton .githubImg {
+    margin-left: 5vw;
+    height: 70%;
+}
+
+/* #endregion */
+
+/* #region Desktop Header Bar */
 
 #headerBar {
     grid-column-start: 2;
@@ -121,10 +223,71 @@ ul {
     background: white;
 }
 
-#mainContentWindow {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 4;
-    background: rgb(232, 241, 242);
+/* #endregion */
+
+/* #region Mobile Nav Bar */
+#mobileNavBar {
+    height: 3vh;
+    width: 100vw;
+    background-color: rgb(21, 176, 151);
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
+
+#mobileNavBarMenuDropDownButton {
+    background-color:  rgb(21, 176, 151);
+    color: white;
+    font-weight: bold;
+    text-decoration:underline;
+    font-size: 2.2rem;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+}
+  
+#mobileNavBarMenuDropDown {
+    position: relative;
+    display: inline-block;
+}
+  
+#mobileNavBarMenuDropDown-content {
+    font-family: 'Roboto';
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 33vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+#mobileNavBarMenuDropDown-content p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+#mobileNavBarMenuDropDown-content p:hover {background-color: #f1f1f1}
+  
+#mobileNavBarMenuDropDown:hover #mobileNavBarMenuDropDown-content {
+    display: block;
+}
+
+#mobileNavBarMenuDropDown:hover #mobileNavBarMenuDropDownButton {
+    background-color: #3e8e41;
+}
+
+#mobileNavBarMenuDropDownSymbol {
+    color: white;
+    font-size: 1.2rem;
+}
+
+#mobileHomeLink {
+    display: none;
+}
+
+/* #endregion */
