@@ -20,7 +20,6 @@ const profilePictureOverlayFactory = () => {
     // Events
     //------------------------------------------------------------------------
     document.querySelector("body").addEventListener("click", (e) => {
-        console.log(e.target);
         if (profilePictureOverlayActive && e.target != docProfPicture) {
             document.querySelector("#profPicOverlay").style.display = "none";
             profilePictureOverlayActive = false;
