@@ -221,6 +221,15 @@ ul {
     grid-row-start: 1;
     grid-row-end: 2;
     background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#headerBarTitle {
+    font-family: 'RobotoBold';
+    font-size: xx-large;
+    margin-left: 2rem;
 }
 
 /* #endregion */
@@ -291,3 +300,25 @@ ul {
 }
 
 /* #endregion */
+
+#homePicture {
+    max-height: 80vh;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 15vh;
+    left: 55vw;
+    border-radius: 15px;
+}
+
+#homeCard {
+    display: none;
+    background-color: rgb(21, 176, 151);
+    width: 60vw;
+    height: 52vh;
+    position: absolute;
+    border-radius: 15px;
+    top: 43vh;
+    left: 29vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}

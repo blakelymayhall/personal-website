@@ -1,6 +1,6 @@
 import { profilePictureOverlayFactory } from "./profilePictureOverlay";
 
-const sideBarFactory = () => {
+const sideBarFactory = (interfaceLayer) => {
     // Data
     //------------------------------------------------------------------------
     let profilePictureOverlay = profilePictureOverlayFactory();
@@ -16,6 +16,7 @@ const sideBarFactory = () => {
     documentMenuOptions.forEach((documentMenuOption) => {
         documentMenuOption.addEventListener("click", () => {
             activeMenuOption = `#${documentMenuOption.id}`;
+            interfaceLayer.pageChanged(activeMenuOption);
             applyActiveMenuOptionDecor(activeMenuOption);
         });
     });
@@ -60,4 +61,13 @@ const menuOptions = {
     CONT: "#contactLink",
 };
 
-export { sideBarFactory, menuOptions };
+const domMenuOptionsText = new Map();
+domMenuOptionsText.set(menuOptions.HOME, "Home");
+domMenuOptionsText.set(menuOptions.ABOUT, "About");
+domMenuOptionsText.set(menuOptions.EXP, "Experience");
+domMenuOptionsText.set(menuOptions.BLOG, "Blog");
+domMenuOptionsText.set(menuOptions.CURR, "Current Activity");
+domMenuOptionsText.set(menuOptions.CONT, "Contact");
+domMenuOptionsText.set(menuOptions.PROJ, "Projects");
+
+export { sideBarFactory, menuOptions, domMenuOptionsText };
