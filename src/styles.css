@@ -36,7 +36,7 @@ ul {
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 4;
-    background: rgb(232, 241, 242);
+    background: rgb(234, 230, 229);
 }
 
 /* #region Desktop Side Bar */
@@ -66,7 +66,7 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgb(81, 60, 44);
+    background: rgb(143, 128, 115);
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
@@ -82,6 +82,7 @@ ul {
     margin-top: 5vh;
     border-radius: 50%;
     cursor: pointer; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 #profName {
