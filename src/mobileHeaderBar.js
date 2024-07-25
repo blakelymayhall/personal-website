@@ -1,15 +1,6 @@
-const mobileHeaderBarFactory = (isMobile) => {
+const mobileHeaderBarFactory = (interfaceLayer) => {
     // Data
     //------------------------------------------------------------------------
-    const documentMenuOptionsText = new Map();
-    documentMenuOptionsText.set(mobileMenuOptions.HOME, "Home");
-    documentMenuOptionsText.set(mobileMenuOptions.ABOUT, "About");
-    documentMenuOptionsText.set(mobileMenuOptions.EXP, "Experience");
-    documentMenuOptionsText.set(mobileMenuOptions.BLOG, "Blog");
-    documentMenuOptionsText.set(mobileMenuOptions.CURR, "Current Activity");
-    documentMenuOptionsText.set(mobileMenuOptions.CONT, "Contact");
-    documentMenuOptionsText.set(mobileMenuOptions.PROJ, "Projects");
-
     let activeMenuOption = mobileMenuOptions.HOME;
     const getActiveMenuOption = () => {
         return activeMenuOption;
@@ -29,25 +20,26 @@ const mobileHeaderBarFactory = (isMobile) => {
 
     const updateActiveMenuOption = (menuOption) => {
         activeMenuOption = menuOption;
+        interfaceLayer.pageChanged(activeMenuOption);
         document.querySelector("#mobileNavBarMenuDropDownButton").textContent =
-            documentMenuOptionsText.get(menuOption);
+            domMobileMenuOptionsText.get(menuOption);
         generateDropdownOptions(menuOption);
     };
 
     const generateDropdownOptions = (activeMenuOption) => {
         document.querySelector("#mobileNavBarMenuDropDown-content").innerHTML =
             "";
-        documentMenuOptionsText.forEach((documentMenuOptionText) => {
+        domMobileMenuOptionsText.forEach((domMobileMenuOptionText) => {
             if (
-                documentMenuOptionsText.get(activeMenuOption) !=
-                documentMenuOptionText
+                domMobileMenuOptionsText.get(activeMenuOption) !=
+                domMobileMenuOptionText
             ) {
                 const menuOption = document.createElement("p");
                 menuOption.setAttribute(
                     "id",
-                    getKey(documentMenuOptionsText, documentMenuOptionText)
+                    getKey(domMobileMenuOptionsText, domMobileMenuOptionText)
                 );
-                menuOption.textContent = documentMenuOptionText;
+                menuOption.textContent = domMobileMenuOptionText;
                 document
                     .querySelector("#mobileNavBarMenuDropDown-content")
                     .appendChild(menuOption);
@@ -61,9 +53,7 @@ const mobileHeaderBarFactory = (isMobile) => {
 
     // Init
     //------------------------------------------------------------------------
-    if (isMobile) {
-        generateDropdownOptions(activeMenuOption);
-    };
+    generateDropdownOptions(activeMenuOption);
     //------------------------------------------------------------------------
 
     // Export Functions
@@ -84,4 +74,13 @@ const mobileMenuOptions = {
     CONT: "#mobileContactLink",
 };
 
-export { mobileHeaderBarFactory, mobileMenuOptions };
+const domMobileMenuOptionsText = new Map();
+domMobileMenuOptionsText.set(mobileMenuOptions.HOME, "Home");
+domMobileMenuOptionsText.set(mobileMenuOptions.ABOUT, "About");
+domMobileMenuOptionsText.set(mobileMenuOptions.EXP, "Experience");
+domMobileMenuOptionsText.set(mobileMenuOptions.BLOG, "Blog");
+domMobileMenuOptionsText.set(mobileMenuOptions.CURR, "Current Activity");
+domMobileMenuOptionsText.set(mobileMenuOptions.CONT, "Contact");
+domMobileMenuOptionsText.set(mobileMenuOptions.PROJ, "Projects");
+
+export { mobileHeaderBarFactory, mobileMenuOptions, domMobileMenuOptionsText };

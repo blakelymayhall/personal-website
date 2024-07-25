@@ -1,7 +1,7 @@
 import { initPageLoad } from "./init_page_load";
-import { sideBarFactory } from "./sideBar";
-import { mobileHeaderBarFactory } from "./mobileHeaderBar";
-
+import { sideBarFactory, menuOptions, domMenuOptionsText } from "./sideBar";
+import { mobileHeaderBarFactory, mobileMenuOptions, domMobileMenuOptionsText } from "./mobileHeaderBar";
+import { headerBarFactory } from "./headerBar";
 //import "./styles.css";
 
 // Data
@@ -13,12 +13,30 @@ const isMobile =
     );
 //------------------------------------------------------------------------
 
+// Interface Layer
+//------------------------------------------------------------------------
+const interfaceLayer = () => {
+    const pageChanged = (menuOption) => {
+        if (!isMobile) {
+            headerBar.updateHeaderTitle(domMenuOptionsText.get(menuOption));
+        }
+    };
+
+    return {
+        pageChanged,
+    }
+};
+//------------------------------------------------------------------------
+
+// Init
+//------------------------------------------------------------------------
 initPageLoad(isMobile);
-let sideBar = sideBarFactory();
-let mobileHeaderBar = mobileHeaderBarFactory(isMobile);
+let menuOptionController = isMobile ?  mobileHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
+let headerBar = isMobile ? null : headerBarFactory(interfaceLayer());
+//------------------------------------------------------------------------
 
 //DEBUG 
 document.querySelector("body").addEventListener("click", (e) => {
-    console.log(mobileHeaderBar.getActiveMenuOption());
-    console.log(sideBar.getActiveMenuOption());
+    //console.log(mobileHeaderBar.getActiveMenuOption());
+    //console.log(sideBar.getActiveMenuOption());
 });
