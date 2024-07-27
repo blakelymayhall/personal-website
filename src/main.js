@@ -11,6 +11,25 @@ const isMobile =
         // eslint-disable-next-line prettier/prettier
         navigator.userAgent
     );
+const domPages = document.querySelectorAll(".contentPage");
+const domPagesIDs = new Map();
+domPagesIDs.set(menuOptions.HOME, "#homePageContent");
+domPagesIDs.set(menuOptions.ABOUT, "");
+domPagesIDs.set(menuOptions.EXP, "");
+domPagesIDs.set(menuOptions.BLOG, "");
+domPagesIDs.set(menuOptions.CURR, "");
+domPagesIDs.set(menuOptions.CONT, "");
+domPagesIDs.set(menuOptions.PROJ, "");
+//------------------------------------------------------------------------
+
+// Support
+//------------------------------------------------------------------------
+const pageSwitcher = (menuOption) => {
+    domPages.forEach((domPage) => {
+        domPage.style.cssText = "display:none;";
+    });
+    document.querySelector(domPagesIDs.get(menuOption)).style.cssText = "display:block;";
+};
 //------------------------------------------------------------------------
 
 // Interface Layer
@@ -20,6 +39,7 @@ const interfaceLayer = () => {
         if (!isMobile) {
             headerBar.updateHeaderTitle(domMenuOptionsText.get(menuOption));
         }
+        pageSwitcher(menuOption);
     };
 
     return {
