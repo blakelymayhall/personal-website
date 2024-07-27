@@ -303,23 +303,57 @@ ul {
 /* #endregion */
 
 #homePicture {
-    max-height: 80vh;
+    height: max(40vw, 60vh);
     aspect-ratio: 1/1;
     position: absolute;
     top: 15vh;
-    left: 55vw;
+    left: max(55vw, 520px);
     border-radius: 15px;
 }
 
-#homeCard {
-    display: none;
-    background-color: rgb(21, 176, 151);
-    width: 60vw;
-    height: 52vh;
+#homeTitleBlock {
+    min-width: 260px;
+    width: fit-content;
+    color: rgb(18, 19, 15);
+    font-family: 'Roboto';
     position: absolute;
+    top: 10rem;
+    left: max(27vw, 300px);
+    display: flex;
+    flex-direction: column;
+    font-size: xx-large;
+    gap: 1rem;
+}
+
+#homeTitleBlock p {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    background-color: rgb(143, 203, 155);
+}
+
+#homeTextBlock {
+    background-color: whitesmoke;
+    font-family: 'Roboto';
+    position: absolute;
+    width: 25rem;
     border-radius: 15px;
-    top: 43vh;
-    left: 29vw;
+    top: 55vh;
+    left: max(23vw, 300px);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-wrap: wrap;
+    padding: 1rem;
+    font-size: larger;
+}
+
+@media (max-width: 1100px) {
+    #homeTitleBlock {
+        font-size: 1.4rem;
+    }
+
+    #homeTextBlock {
+        font-size: medium;
+    }
 }
