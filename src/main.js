@@ -14,12 +14,12 @@ const isMobile =
 const domPages = document.querySelectorAll(".contentPage");
 const domPagesIDs = new Map();
 domPagesIDs.set(menuOptions.HOME, "#homePageContent");
-domPagesIDs.set(menuOptions.ABOUT, "");
-domPagesIDs.set(menuOptions.EXP, "");
-domPagesIDs.set(menuOptions.BLOG, "");
-domPagesIDs.set(menuOptions.CURR, "");
-domPagesIDs.set(menuOptions.CONT, "");
-domPagesIDs.set(menuOptions.PROJ, "");
+domPagesIDs.set(menuOptions.ABOUT, "#aboutPageContent");
+domPagesIDs.set(menuOptions.EXP, "#expPageContent");
+domPagesIDs.set(menuOptions.BLOG, "#blogPageContent");
+domPagesIDs.set(menuOptions.CURR, "#currPageContent");
+domPagesIDs.set(menuOptions.CONT, "#contPageContent");
+domPagesIDs.set(menuOptions.PROJ, "#projPageContent");
 //------------------------------------------------------------------------
 
 // Support
