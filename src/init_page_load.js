@@ -5,6 +5,8 @@ const initPageLoad = (isMobile) => {
         document.querySelector("#mainContainer").style.display = "flex";
         document.querySelector("#mobileHeaderBar").style.display = "grid";
         document.querySelector("#mobileNavBar").style.display = "flex";
+        document.querySelector("#mobileHomePageContent").style.display = "block";
+        document.querySelector("#desktopHomePageContent").style.display = "none";
     }
 };
 

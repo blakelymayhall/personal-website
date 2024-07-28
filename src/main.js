@@ -20,6 +20,13 @@ domPagesIDs.set(menuOptions.BLOG, "#blogPageContent");
 domPagesIDs.set(menuOptions.CURR, "#currPageContent");
 domPagesIDs.set(menuOptions.CONT, "#contPageContent");
 domPagesIDs.set(menuOptions.PROJ, "#projPageContent");
+domPagesIDs.set(mobileMenuOptions.HOME, "#homePageContent");
+domPagesIDs.set(mobileMenuOptions.ABOUT, "#aboutPageContent");
+domPagesIDs.set(mobileMenuOptions.EXP, "#expPageContent");
+domPagesIDs.set(mobileMenuOptions.BLOG, "#blogPageContent");
+domPagesIDs.set(mobileMenuOptions.CURR, "#currPageContent");
+domPagesIDs.set(mobileMenuOptions.CONT, "#contPageContent");
+domPagesIDs.set(mobileMenuOptions.PROJ, "#projPageContent");
 //------------------------------------------------------------------------
 
 // Support
@@ -28,7 +35,8 @@ const pageSwitcher = (menuOption) => {
     domPages.forEach((domPage) => {
         domPage.style.cssText = "display:none;";
     });
-    document.querySelector(domPagesIDs.get(menuOption)).style.cssText = "display:block;";
+    const domPageID = domPagesIDs.get(menuOption);
+    document.querySelector(domPageID).style.cssText = "display:block;";
 };
 //------------------------------------------------------------------------
 
