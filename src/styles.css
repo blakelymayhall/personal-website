@@ -32,6 +32,7 @@ ul {
 
 #mainContentWindow {
     width: 100%;
+    height: 100%;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -131,8 +132,8 @@ ul {
 /* #region Mobile Header Bar */
 
 #mobileHeaderBar {
-    background: rgb(81, 60, 44);
-    width: 100%;
+    background: rgb(143, 128, 115);
+    width: 101%;
     height: 20%;
     font-family: 'Roboto';
     display: none;
@@ -238,8 +239,8 @@ ul {
 /* #region Mobile Nav Bar */
 #mobileNavBar {
     height: 3vh;
-    width: 100vw;
-    background-color: rgb(21, 176, 151);
+    width: 101vw;
+    background-color: rgb(189, 179, 172);
     display: none;
     flex-direction: row;
     align-items: center;
@@ -247,7 +248,7 @@ ul {
 }
 
 #mobileNavBarMenuDropDownButton {
-    background-color:  rgb(21, 176, 151);
+    background-color:  rgb(189, 179, 172);
     color: white;
     font-weight: bold;
     text-decoration:underline;
@@ -288,7 +289,7 @@ ul {
 }
 
 #mobileNavBarMenuDropDown:hover #mobileNavBarMenuDropDownButton {
-    background-color: #3e8e41;
+    background-color: rgb(189, 179, 172);
 }
 
 #mobileNavBarMenuDropDownSymbol {
@@ -301,6 +302,15 @@ ul {
 }
 
 /* #endregion */
+
+/* #region Desktop Home */
+#homePageContent {
+    height: 100%;
+}
+
+#desktopHomePageContent {
+    height: 100%;
+}
 
 #homePicture {
     height: max(40vw, 60vh);
@@ -357,3 +367,58 @@ ul {
         font-size: medium;
     }
 }
+/* #endregion */
+
+/* #region Mobile Home */
+#mobileHomePageContent{
+    background-color: rgb(234, 230, 229);
+    display: none;
+    width: 101vw;
+    height: 100%;
+}
+
+#mobileHomePicture {
+    position: absolute;
+    margin-top: 5rem;
+    width: 101vw;
+    aspect-ratio: 1/1;
+}
+
+#mobileHomeTitleBlock {
+    width: fit-content;
+    color: rgb(18, 19, 15);
+    font-family: 'Roboto';
+    position: absolute;
+    top: 27vh;
+    left: 3vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    gap: 1rem;
+}
+
+#mobileHomeTitleBlock p {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    background-color: rgb(143, 203, 155);
+}
+
+#mobileHomeTextBlock {
+    background-color: whitesmoke;
+    font-family: 'Roboto';
+    position: absolute;
+    width: 90vw;
+    height: 20vh;
+    border-radius: 15px;
+    top: 60vh;
+    left: 5vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-wrap: wrap;
+    padding: 1rem;
+    font-size: xx-large;
+}
+
+/* #endregion */
