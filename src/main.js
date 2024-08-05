@@ -6,11 +6,7 @@ import { headerBarFactory } from "./headerBar";
 
 // Data
 //------------------------------------------------------------------------
-const isMobile =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
-        // eslint-disable-next-line prettier/prettier
-        navigator.userAgent
-    );
+const isMobile = screen.width < screen.height;
 const domPages = document.querySelectorAll(".contentPage");
 const domPagesIDs = new Map();
 domPagesIDs.set(menuOptions.HOME, "#homePageContent");
@@ -61,6 +57,19 @@ const interfaceLayer = () => {
 initPageLoad(isMobile);
 let menuOptionController = isMobile ?  mobileHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
 let headerBar = isMobile ? null : headerBarFactory(interfaceLayer());
+//------------------------------------------------------------------------
+
+// Events
+//------------------------------------------------------------------------
+let portrait = window.matchMedia("(orientation: portrait)");
+portrait.addEventListener("change", function(e) {
+    if(e.matches) {
+        initPageLoad(true);
+    } 
+    else {
+        initPageLoad(false);
+    }
+});
 //------------------------------------------------------------------------
 
 //DEBUG 
