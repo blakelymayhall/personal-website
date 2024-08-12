@@ -35,15 +35,18 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
             document.querySelector("#portraitNavBarMenuDropDown-content").appendChild(menuOption);
             menuOption.addEventListener("click", () => {
                 updateActiveMenuOption(menuOption.id);
-                let dropDownDisplay = document.querySelector("#portraitNavBarMenuDropDown-content").style.display;
-                if (dropDownDisplay == "none") {
-                    dropDownDisplay = "block";
-                } else {
-                    dropDownDisplay = "none";
-                }
+                document.querySelector("#portraitNavBarMenuDropDown-content").style.display = "none";
             });
         });
     };
+    //------------------------------------------------------------------------
+
+    // Events
+    //------------------------------------------------------------------------
+    const dropDownButton = document.querySelector("#portraitNavBarMenuDropDownButton");
+    dropDownButton.addEventListener("click", () => {
+        document.querySelector("#portraitNavBarMenuDropDown-content").style.display = "block";
+    });
     //------------------------------------------------------------------------
 
     // Init
