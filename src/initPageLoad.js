@@ -1,7 +1,20 @@
 import { menuOptions } from "./sideBar";
 import { portraitMenuOptions } from "./portraitHeaderBar";
+import profilePicture from "./assets/IMG_5527.jpeg";
+import linkedInPicture from "./assets/linkedin.png";
+import githubPicture from "./assets/github-sign.png";
+import homePicture from "./assets/IMG_1815.jpeg";
+
 
 const initPageLoad = (isPortrait) => {
+
+    document.querySelector("#portraitProfPic").src = profilePicture;
+    document.querySelector("#profPic").src = profilePicture;
+    document.querySelector(".linkedInImg").src = linkedInPicture;
+    document.querySelector(".githubImg").src = githubPicture;
+    document.querySelector("#portraitHomePicture").src = homePicture;
+    document.querySelector("#homePicture").src = homePicture;
+
     if (isPortrait) {
         document.querySelector("#sideBar").style.display = "none";
         document.querySelector("#headerBar").style.display = "none";

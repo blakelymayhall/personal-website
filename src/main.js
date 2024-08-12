@@ -1,8 +1,8 @@
+import "./styles.css";
 import { initPageLoad, domPages, domPagesIDs } from "./initPageLoad";
 import { sideBarFactory, domMenuOptionsText } from "./sideBar";
 import { portraitHeaderBarFactory } from "./portraitHeaderBar";
 import { headerBarFactory } from "./headerBar";
-//import "./styles.css";
 
 // Data
 //------------------------------------------------------------------------
