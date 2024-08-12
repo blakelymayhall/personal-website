@@ -6,7 +6,7 @@ import { headerBarFactory } from "./headerBar";
 
 // Data
 //------------------------------------------------------------------------
-const isPortrait = screen.width < screen.height;
+let isPortrait = document.body.clientWidth < document.body.clientHeight;
 //------------------------------------------------------------------------
 
 // Support
@@ -49,11 +49,12 @@ let headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
 //------------------------------------------------------------------------
 let portrait = window.matchMedia("(orientation: portrait)");
 portrait.addEventListener("change", function (e) {
-    if (e.matches) {
-        initPageLoad(true);
-    } else {
-        initPageLoad(false);
-    }
+    isPortrait = document.body.clientWidth < document.body.clientHeight;
+    initPageLoad(isPortrait);
+    menuOptionController = isPortrait
+        ? portraitHeaderBarFactory(interfaceLayer())
+        : sideBarFactory(interfaceLayer());
+    headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
 });
 //------------------------------------------------------------------------
 
