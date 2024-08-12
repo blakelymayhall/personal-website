@@ -10,8 +10,15 @@ const initPageLoad = (isPortrait) => {
 
     document.querySelector("#portraitProfPic").src = profilePicture;
     document.querySelector("#profPic").src = profilePicture;
-    document.querySelector(".linkedInImg").src = linkedInPicture;
-    document.querySelector(".githubImg").src = githubPicture;
+    const linkedInButtons = document.querySelectorAll(".linkedInImg");
+    linkedInButtons.forEach(linkedInButton => {
+        linkedInButton.src = linkedInPicture;
+    });
+    document.querySelectorAll(".githubImg").src = githubPicture;
+    const githubButtons = document.querySelectorAll(".githubImg");
+    githubButtons.forEach(githubButton => {
+        githubButton.src = githubPicture;
+    });
     document.querySelector("#portraitHomePicture").src = homePicture;
     document.querySelector("#homePicture").src = homePicture;
 
