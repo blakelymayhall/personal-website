@@ -135,9 +135,9 @@ ul {
 
 /* #endregion */
 
-/* #region Mobile Header Bar */
+/* #region portrait Header Bar */
 
-#mobileHeaderBar {
+#portraitHeaderBar {
     background: rgb(143, 128, 115);
     width: 101%;
     height: 20%;
@@ -148,7 +148,7 @@ ul {
     color: rgb(232, 241, 242);
 }
 
-#mobileProfPicWrapper {
+#portraitProfPicWrapper {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -161,13 +161,13 @@ ul {
     height: 100%;
 }
 
-#mobileProfPic {
+#portraitProfPic {
     height: 70%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
 }
 
-#mobileProfNameWrapper {
+#portraitProfNameWrapper {
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 2;
@@ -180,7 +180,7 @@ ul {
     height: 100%;
 }
 
-#mobileProfName {
+#portraitProfName {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -189,7 +189,7 @@ ul {
     font-size: 3rem;
 }
 
-#mobileLinkedInImgButton {
+#portraitLinkedInImgButton {
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 1;
@@ -201,7 +201,7 @@ ul {
     margin-top: 2%;
 }
 
-#mobileGithubImgButton {
+#portraitGithubImgButton {
     margin-bottom: 2%;
     grid-column-start: 3;
     grid-column-end: 4;
@@ -213,7 +213,7 @@ ul {
     justify-content: center;
 }
 
-#mobileLinkedInImgButton .linkedInImg, #mobileGithubImgButton .githubImg {
+#portraitLinkedInImgButton .linkedInImg, #portraitGithubImgButton .githubImg {
     margin-left: 5vw;
     height: 70%;
 }
@@ -241,8 +241,8 @@ ul {
 
 /* #endregion */
 
-/* #region Mobile Nav Bar */
-#mobileNavBar {
+/* #region portrait Nav Bar */
+#portraitNavBar {
     height: 3vh;
     width: 101vw;
     background-color: rgb(189, 179, 172);
@@ -252,7 +252,7 @@ ul {
     justify-content: center;
 }
 
-#mobileNavBarMenuDropDownButton {
+#portraitNavBarMenuDropDownButton {
     background-color:  rgb(189, 179, 172);
     color: white;
     font-weight: bold;
@@ -263,12 +263,12 @@ ul {
     height: 100%;
 }
   
-#mobileNavBarMenuDropDown {
+#portraitNavBarMenuDropDown {
     position: relative;
     display: inline-block;
 }
   
-#mobileNavBarMenuDropDown-content {
+#portraitNavBarMenuDropDown-content {
     font-family: 'Roboto';
     display: none;
     position: absolute;
@@ -278,7 +278,7 @@ ul {
     z-index: 1;
 }
   
-#mobileNavBarMenuDropDown-content p {
+#portraitNavBarMenuDropDown-content p {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -287,22 +287,22 @@ ul {
     text-align: center;
 }
 
-#mobileNavBarMenuDropDown-content p:hover {background-color: #f1f1f1}
+#portraitNavBarMenuDropDown-content p:hover {background-color: #f1f1f1}
   
-#mobileNavBarMenuDropDown:hover #mobileNavBarMenuDropDown-content {
+#portraitNavBarMenuDropDown:hover #portraitNavBarMenuDropDown-content {
     display: block;
 }
 
-#mobileNavBarMenuDropDown:hover #mobileNavBarMenuDropDownButton {
+#portraitNavBarMenuDropDown:hover #portraitNavBarMenuDropDownButton {
     background-color: rgb(189, 179, 172);
 }
 
-#mobileNavBarMenuDropDownSymbol {
+#portraitNavBarMenuDropDownSymbol {
     color: white;
     font-size: 1.2rem;
 }
 
-#mobileHomeLink {
+#portraitHomeLink {
     display: none;
 }
 
@@ -374,22 +374,22 @@ ul {
 }
 /* #endregion */
 
-/* #region Mobile Home */
-#mobileHomePageContent{
+/* #region portrait Home */
+#portraitHomePageContent{
     background-color: rgb(234, 230, 229);
     display: none;
     width: 101vw;
     height: 100%;
 }
 
-#mobileHomePicture {
+#portraitHomePicture {
     position: absolute;
     margin-top: 5rem;
     width: 101vw;
     aspect-ratio: 1/1;
 }
 
-#mobileHomeTitleBlock {
+#portraitHomeTitleBlock {
     width: fit-content;
     color: rgb(18, 19, 15);
     font-family: 'Roboto';
@@ -402,13 +402,13 @@ ul {
     gap: 1rem;
 }
 
-#mobileHomeTitleBlock p {
+#portraitHomeTitleBlock p {
     padding-left: 1.4rem;
     padding-right: 1.4rem;
     background-color: rgb(143, 203, 155);
 }
 
-#mobileHomeTextBlock {
+#portraitHomeTextBlock {
     background-color: whitesmoke;
     font-family: 'Roboto';
     position: absolute;

@@ -14,7 +14,7 @@ const profilePictureOverlayFactory = () => {
     const activate = () => {
         profilePictureOverlayActive = true;
         document.querySelector("#profPicOverlay").style.display = "flex";
-    }
+    };
     //------------------------------------------------------------------------
 
     // Events
@@ -34,7 +34,6 @@ const profilePictureOverlayFactory = () => {
         getProfilePictureOverlayActive,
     };
     //------------------------------------------------------------------------
-
 };
 
-export {profilePictureOverlayFactory}
+export { profilePictureOverlayFactory };
