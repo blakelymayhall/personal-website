@@ -1,12 +1,12 @@
 import { initPageLoad, domPages, domPagesIDs } from "./initPageLoad";
 import { sideBarFactory, domMenuOptionsText } from "./sideBar";
-import { mobileHeaderBarFactory } from "./mobileHeaderBar";
+import { portraitHeaderBarFactory } from "./portraitHeaderBar";
 import { headerBarFactory } from "./headerBar";
 //import "./styles.css";
 
 // Data
 //------------------------------------------------------------------------
-const isMobile = screen.width < screen.height;
+const isPortrait = screen.width < screen.height;
 //------------------------------------------------------------------------
 
 // Support
@@ -24,7 +24,7 @@ const pageSwitcher = (menuOption) => {
 //------------------------------------------------------------------------
 const interfaceLayer = () => {
     const pageChanged = (menuOption) => {
-        if (!isMobile) {
+        if (!isPortrait) {
             headerBar.updateHeaderTitle(domMenuOptionsText.get(menuOption));
         }
         pageSwitcher(menuOption);
@@ -32,32 +32,33 @@ const interfaceLayer = () => {
 
     return {
         pageChanged,
-    }
+    };
 };
 //------------------------------------------------------------------------
 
 // Init
 //------------------------------------------------------------------------
-initPageLoad(isMobile);
-let menuOptionController = isMobile ?  mobileHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
-let headerBar = isMobile ? null : headerBarFactory(interfaceLayer());
+initPageLoad(isPortrait);
+let menuOptionController = isPortrait
+    ? portraitHeaderBarFactory(interfaceLayer())
+    : sideBarFactory(interfaceLayer());
+let headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
 //------------------------------------------------------------------------
 
 // Events
 //------------------------------------------------------------------------
 let portrait = window.matchMedia("(orientation: portrait)");
-portrait.addEventListener("change", function(e) {
-    if(e.matches) {
+portrait.addEventListener("change", function (e) {
+    if (e.matches) {
         initPageLoad(true);
-    } 
-    else {
+    } else {
         initPageLoad(false);
     }
 });
 //------------------------------------------------------------------------
 
-//DEBUG 
+//DEBUG
 document.querySelector("body").addEventListener("click", (e) => {
-    //console.log(mobileHeaderBar.getActiveMenuOption());
+    //console.log(portraitHeaderBar.getActiveMenuOption());
     //console.log(sideBar.getActiveMenuOption());
 });
