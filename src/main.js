@@ -39,9 +39,7 @@ const interfaceLayer = () => {
 // Init
 //------------------------------------------------------------------------
 initPageLoad(isPortrait);
-let menuOptionController = isPortrait
-    ? portraitHeaderBarFactory(interfaceLayer())
-    : sideBarFactory(interfaceLayer());
+let menuOptionController = isPortrait ? portraitHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
 let headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
 //------------------------------------------------------------------------
 
@@ -51,9 +49,7 @@ let portrait = window.matchMedia("(orientation: portrait)");
 portrait.addEventListener("change", function (e) {
     isPortrait = document.body.clientWidth < document.body.clientHeight;
     initPageLoad(isPortrait);
-    menuOptionController = isPortrait
-        ? portraitHeaderBarFactory(interfaceLayer())
-        : sideBarFactory(interfaceLayer());
+    menuOptionController = isPortrait ? portraitHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
     headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
 });
 //------------------------------------------------------------------------

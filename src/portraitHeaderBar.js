@@ -21,39 +21,32 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
     const updateActiveMenuOption = (menuOption) => {
         activeMenuOption = menuOption;
         interfaceLayer.pageChanged(activeMenuOption);
-        document.querySelector(
-            "#portraitNavBarMenuDropDownButton"
-        ).textContent = domPortraitMenuOptionsText.get(menuOption);
-        generateDropdownOptions(menuOption);
+        document.querySelector("#portraitNavBarMenuDropDownButton").textContent =
+            domPortraitMenuOptionsText.get(menuOption);
+        generateDropdownOptions();
     };
 
-    const generateDropdownOptions = (activeMenuOption) => {
-        document.querySelector(
-            "#portraitNavBarMenuDropDown-content"
-        ).innerHTML = "";
+    const generateDropdownOptions = () => {
+        document.querySelector("#portraitNavBarMenuDropDown-content").innerHTML = "";
         domPortraitMenuOptionsText.forEach((domPortraitMenuOptionText) => {
-            if (
-                domPortraitMenuOptionsText.get(activeMenuOption) !=
-                domPortraitMenuOptionsText
-            ) {
-                const menuOption = document.createElement("p");
-                menuOption.setAttribute(
-                    "id",
-                    getKey(
-                        domPortraitMenuOptionsText,
-                        domPortraitMenuOptionText
-                    )
-                );
-                menuOption.textContent = domPortraitMenuOptionText;
-                document
-                    .querySelector("#portraitNavBarMenuDropDown-content")
-                    .appendChild(menuOption);
-                menuOption.addEventListener("click", () => {
-                    updateActiveMenuOption(menuOption.id);
-                });
-            }
+            const menuOption = document.createElement("p");
+            menuOption.setAttribute("id", getKey(domPortraitMenuOptionsText, domPortraitMenuOptionText));
+            menuOption.textContent = domPortraitMenuOptionText;
+            document.querySelector("#portraitNavBarMenuDropDown-content").appendChild(menuOption);
+            menuOption.addEventListener("click", () => {
+                updateActiveMenuOption(menuOption.id);
+                document.querySelector("#portraitNavBarMenuDropDown-content").style.display = "none";
+            });
         });
     };
+    //------------------------------------------------------------------------
+
+    // Events
+    //------------------------------------------------------------------------
+    const dropDownButton = document.querySelector("#portraitNavBarMenuDropDownButton");
+    dropDownButton.addEventListener("click", () => {
+        document.querySelector("#portraitNavBarMenuDropDown-content").style.display = "block";
+    });
     //------------------------------------------------------------------------
 
     // Init
@@ -88,8 +81,4 @@ domPortraitMenuOptionsText.set(portraitMenuOptions.CURR, "Current Activity");
 domPortraitMenuOptionsText.set(portraitMenuOptions.CONT, "Contact");
 domPortraitMenuOptionsText.set(portraitMenuOptions.PROJ, "Projects");
 
-export {
-    portraitHeaderBarFactory,
-    portraitMenuOptions,
-    domPortraitMenuOptionsText,
-};
+export { portraitHeaderBarFactory, portraitMenuOptions, domPortraitMenuOptionsText };
