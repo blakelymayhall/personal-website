@@ -50,10 +50,15 @@ let headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
 let portrait = window.matchMedia("(orientation: portrait)");
 portrait.addEventListener("change", function (e) {
     if (e.matches) {
-        initPageLoad(true);
+        isPortrait = true;
     } else {
-        initPageLoad(false);
+        isPortrait = false;
     }
+    initPageLoad(isPortrait);
+    menuOptionController = isPortrait
+        ? portraitHeaderBarFactory(interfaceLayer())
+        : sideBarFactory(interfaceLayer());
+    headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
 });
 //------------------------------------------------------------------------
 
