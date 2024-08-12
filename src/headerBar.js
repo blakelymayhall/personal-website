@@ -31,4 +31,4 @@ const headerBarFactory = () => {
     };
 };
 
-export {headerBarFactory}
+export { headerBarFactory };

@@ -5,18 +5,16 @@ import linkedInPicture from "./assets/linkedin.png";
 import githubPicture from "./assets/github-sign.png";
 import homePicture from "./assets/IMG_1815.jpeg";
 
-
 const initPageLoad = (isPortrait) => {
-
     document.querySelector("#portraitProfPic").src = profilePicture;
     document.querySelector("#profPic").src = profilePicture;
     const linkedInButtons = document.querySelectorAll(".linkedInImg");
-    linkedInButtons.forEach(linkedInButton => {
+    linkedInButtons.forEach((linkedInButton) => {
         linkedInButton.src = linkedInPicture;
     });
     document.querySelectorAll(".githubImg").src = githubPicture;
     const githubButtons = document.querySelectorAll(".githubImg");
-    githubButtons.forEach(githubButton => {
+    githubButtons.forEach((githubButton) => {
         githubButton.src = githubPicture;
     });
     document.querySelector("#portraitHomePicture").src = homePicture;
@@ -28,20 +26,16 @@ const initPageLoad = (isPortrait) => {
         document.querySelector("#mainContainer").style.display = "flex";
         document.querySelector("#portraitHeaderBar").style.display = "grid";
         document.querySelector("#portraitNavBar").style.display = "flex";
-        document.querySelector("#portraitHomePageContent").style.display =
-            "block";
-        document.querySelector("#desktopHomePageContent").style.display =
-            "none";
+        document.querySelector("#portraitHomePageContent").style.display = "block";
+        document.querySelector("#desktopHomePageContent").style.display = "none";
     } else {
         document.querySelector("#sideBar").style.display = "flex";
         document.querySelector("#headerBar").style.display = "flex";
         document.querySelector("#mainContainer").style.display = "grid";
         document.querySelector("#portraitHeaderBar").style.display = "none";
         document.querySelector("#portraitNavBar").style.display = "none";
-        document.querySelector("#portraitHomePageContent").style.display =
-            "none";
-        document.querySelector("#desktopHomePageContent").style.display =
-            "block";
+        document.querySelector("#portraitHomePageContent").style.display = "none";
+        document.querySelector("#desktopHomePageContent").style.display = "block";
     }
 };
 

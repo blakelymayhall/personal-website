@@ -33,8 +33,7 @@ const sideBarFactory = (interfaceLayer) => {
         documentMenuOptions.forEach((documentMenuOption) => {
             documentMenuOption.style.cssText = "text-decoration:none;";
         });
-        document.querySelector(menuOption).style.cssText =
-            "text-decoration:underline;font-family:'RobotoBold';";
+        document.querySelector(menuOption).style.cssText = "text-decoration:underline;font-family:'RobotoBold';";
     };
     //------------------------------------------------------------------------
 
