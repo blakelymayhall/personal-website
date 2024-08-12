@@ -6,7 +6,7 @@ import { headerBarFactory } from "./headerBar";
 
 // Data
 //------------------------------------------------------------------------
-const isPortrait = screen.width < screen.height;
+const isPortrait = window.innerWidth < window.innerHeight;
 //------------------------------------------------------------------------
 
 // Support
