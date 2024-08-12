@@ -135,7 +135,7 @@ ul {
 
 /* #endregion */
 
-/* #region portrait Header Bar */
+/* #region Portrait Header Bar */
 
 #portraitHeaderBar {
     background: rgb(143, 128, 115);
@@ -241,7 +241,7 @@ ul {
 
 /* #endregion */
 
-/* #region portrait Nav Bar */
+/* #region Portrait Nav Bar */
 #portraitNavBar {
     height: 3vh;
     width: 101vw;
@@ -374,7 +374,7 @@ ul {
 }
 /* #endregion */
 
-/* #region portrait Home */
+/* #region Portrait Home */
 #portraitHomePageContent{
     background-color: rgb(234, 230, 229);
     display: none;
@@ -412,8 +412,8 @@ ul {
     background-color: whitesmoke;
     font-family: 'Roboto';
     position: absolute;
-    width: 90vw;
-    max-width: 600px;
+    width: 80vw;
+    min-width: 300px;
     height: fit-content;
     border-radius: 15px;
     top: 65vh;
@@ -424,7 +424,7 @@ ul {
     align-items: center;
     text-wrap: wrap;
     padding: 1rem;
-    font-size: xx-large;
+    font-size: 3rem;
 }
 
 /* #endregion */
