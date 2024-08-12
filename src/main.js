@@ -1,28 +1,12 @@
-import { initPageLoad } from "./init_page_load";
-import { sideBarFactory, menuOptions, domMenuOptionsText } from "./sideBar";
-import { mobileHeaderBarFactory, mobileMenuOptions, domMobileMenuOptionsText } from "./mobileHeaderBar";
+import { initPageLoad, domPages, domPagesIDs } from "./initPageLoad";
+import { sideBarFactory, domMenuOptionsText } from "./sideBar";
+import { mobileHeaderBarFactory } from "./mobileHeaderBar";
 import { headerBarFactory } from "./headerBar";
 //import "./styles.css";
 
 // Data
 //------------------------------------------------------------------------
 const isMobile = screen.width < screen.height;
-const domPages = document.querySelectorAll(".contentPage");
-const domPagesIDs = new Map();
-domPagesIDs.set(menuOptions.HOME, "#homePageContent");
-domPagesIDs.set(menuOptions.ABOUT, "#aboutPageContent");
-domPagesIDs.set(menuOptions.EXP, "#expPageContent");
-domPagesIDs.set(menuOptions.BLOG, "#blogPageContent");
-domPagesIDs.set(menuOptions.CURR, "#currPageContent");
-domPagesIDs.set(menuOptions.CONT, "#contPageContent");
-domPagesIDs.set(menuOptions.PROJ, "#projPageContent");
-domPagesIDs.set(mobileMenuOptions.HOME, "#homePageContent");
-domPagesIDs.set(mobileMenuOptions.ABOUT, "#aboutPageContent");
-domPagesIDs.set(mobileMenuOptions.EXP, "#expPageContent");
-domPagesIDs.set(mobileMenuOptions.BLOG, "#blogPageContent");
-domPagesIDs.set(mobileMenuOptions.CURR, "#currPageContent");
-domPagesIDs.set(mobileMenuOptions.CONT, "#contPageContent");
-domPagesIDs.set(mobileMenuOptions.PROJ, "#projPageContent");
 //------------------------------------------------------------------------
 
 // Support

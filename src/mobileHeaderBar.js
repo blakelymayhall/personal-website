@@ -66,7 +66,7 @@ const mobileHeaderBarFactory = (interfaceLayer) => {
 
 const mobileMenuOptions = {
     HOME: "#mobileHomeLink",
-    ABOUT: "#mobileAboutLink",
+    EDU: "#mobileEduLink",
     EXP: "#mobileExperienceLink",
     PROJ: "#mobileProjectsLink",
     CURR: "#mobileCurrentActivityLink",
@@ -76,7 +76,7 @@ const mobileMenuOptions = {
 
 const domMobileMenuOptionsText = new Map();
 domMobileMenuOptionsText.set(mobileMenuOptions.HOME, "Home");
-domMobileMenuOptionsText.set(mobileMenuOptions.ABOUT, "About");
+domMobileMenuOptionsText.set(mobileMenuOptions.EDU, "Education / Skills");
 domMobileMenuOptionsText.set(mobileMenuOptions.EXP, "Experience");
 domMobileMenuOptionsText.set(mobileMenuOptions.BLOG, "Blog");
 domMobileMenuOptionsText.set(mobileMenuOptions.CURR, "Current Activity");

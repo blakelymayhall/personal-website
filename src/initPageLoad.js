@@ -1,3 +1,6 @@
+import { menuOptions } from "./sideBar";
+import { mobileMenuOptions } from "./mobileHeaderBar";
+
 const initPageLoad = (isMobile) => {
     if (isMobile) {
         document.querySelector("#sideBar").style.display = "none";
@@ -18,4 +21,22 @@ const initPageLoad = (isMobile) => {
     }
 };
 
-export { initPageLoad };
+const domPagesIDs = new Map();
+domPagesIDs.set(menuOptions.HOME, "#homePageContent");
+domPagesIDs.set(menuOptions.EDU, "#eduPageContent");
+domPagesIDs.set(menuOptions.EXP, "#expPageContent");
+domPagesIDs.set(menuOptions.BLOG, "#blogPageContent");
+domPagesIDs.set(menuOptions.CURR, "#currPageContent");
+domPagesIDs.set(menuOptions.CONT, "#contPageContent");
+domPagesIDs.set(menuOptions.PROJ, "#projPageContent");
+domPagesIDs.set(mobileMenuOptions.HOME, "#homePageContent");
+domPagesIDs.set(mobileMenuOptions.EDU, "#eduPageContent");
+domPagesIDs.set(mobileMenuOptions.EXP, "#expPageContent");
+domPagesIDs.set(mobileMenuOptions.BLOG, "#blogPageContent");
+domPagesIDs.set(mobileMenuOptions.CURR, "#currPageContent");
+domPagesIDs.set(mobileMenuOptions.CONT, "#contPageContent");
+domPagesIDs.set(mobileMenuOptions.PROJ, "#projPageContent");
+
+const domPages = document.querySelectorAll(".contentPage");
+
+export { initPageLoad, domPagesIDs, domPages};

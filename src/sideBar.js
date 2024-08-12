@@ -53,7 +53,7 @@ const sideBarFactory = (interfaceLayer) => {
 
 const menuOptions = {
     HOME: "#homeLink",
-    ABOUT: "#aboutLink",
+    EDU: "#eduLink",
     EXP: "#experienceLink",
     PROJ: "#projectsLink",
     CURR: "#currentActivityLink",
@@ -63,7 +63,7 @@ const menuOptions = {
 
 const domMenuOptionsText = new Map();
 domMenuOptionsText.set(menuOptions.HOME, "Home");
-domMenuOptionsText.set(menuOptions.ABOUT, "About");
+domMenuOptionsText.set(menuOptions.EDU, "Education / Skill");
 domMenuOptionsText.set(menuOptions.EXP, "Experience");
 domMenuOptionsText.set(menuOptions.BLOG, "Blog");
 domMenuOptionsText.set(menuOptions.CURR, "Current Activity");
