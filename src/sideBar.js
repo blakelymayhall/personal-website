@@ -15,7 +15,7 @@ const sideBarFactory = (interfaceLayer) => {
     //------------------------------------------------------------------------
     documentMenuOptions.forEach((documentMenuOption) => {
         documentMenuOption.addEventListener("click", () => {
-            activeMenuOption = `#${documentMenuOption.id}`;
+            activeMenuOption = documentMenuOption.id;
             interfaceLayer.pageChanged(activeMenuOption);
             applyActiveMenuOptionDecor(activeMenuOption);
         });
@@ -33,7 +33,7 @@ const sideBarFactory = (interfaceLayer) => {
         documentMenuOptions.forEach((documentMenuOption) => {
             documentMenuOption.style.cssText = "text-decoration:none;";
         });
-        document.querySelector(menuOption).style.cssText = "text-decoration:underline;font-family:'RobotoBold';";
+        document.querySelector(`#${menuOption}`).style.cssText = "text-decoration:underline;font-family:'RobotoBold';";
     };
     //------------------------------------------------------------------------
 
@@ -51,13 +51,13 @@ const sideBarFactory = (interfaceLayer) => {
 };
 
 const menuOptions = {
-    HOME: "#homeLink",
-    EDU: "#eduLink",
-    EXP: "#experienceLink",
-    PROJ: "#projectsLink",
-    CURR: "#currentActivityLink",
-    BLOG: "#blogLink",
-    CONT: "#contactLink",
+    HOME: "homeLink",
+    EDU: "eduLink",
+    EXP: "experienceLink",
+    PROJ: "projectsLink",
+    CURR: "currentActivityLink",
+    BLOG: "blogLink",
+    CONT: "contactLink",
 };
 
 const domMenuOptionsText = new Map();
