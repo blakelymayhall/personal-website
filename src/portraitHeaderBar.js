@@ -21,11 +21,9 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
         activeMenuOption = menuOption;
         interfaceLayer.pageChanged(activeMenuOption);
         dropDownButton.textContent = domPortraitMenuOptionsText.get(menuOption);
-        generateDropdownOptions();
     };
 
     const generateDropdownOptions = () => {
-        dropDownContent.innerHTML = "";
         domPortraitMenuOptionsText.forEach((domPortraitMenuOptionText) => {
             const menuOption = document.createElement("p");
             menuOption.setAttribute("id", getKey(domPortraitMenuOptionsText, domPortraitMenuOptionText));
@@ -34,6 +32,7 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
             menuOption.addEventListener("click", (e) => {
                 updateActiveMenuOption(menuOption.id);
                 dropDownContent.style.cssText = "visibility:hidden;display:none;";
+                dropDownContent.innerHTML = ""; // Safari on IOS seems to not care about the above line
                 dropDownVisible = false;
                 e.stopPropagation();
             });
@@ -45,6 +44,7 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
     //------------------------------------------------------------------------
     dropDownButton.addEventListener("click", (e) => {
         if (!dropDownVisible) {
+            generateDropdownOptions();
             dropDownContent.style.cssText = "visibility:visible;display:block;";
             dropDownVisible = true;
             e.stopPropagation();
@@ -63,7 +63,6 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
 
     // Init
     //------------------------------------------------------------------------
-    generateDropdownOptions(activeMenuOption);
     //------------------------------------------------------------------------
 
     // Export Functions
