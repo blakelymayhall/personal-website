@@ -270,7 +270,8 @@ ul {
   
 #portraitNavBarMenuDropDown-content {
     font-family: 'Roboto';
-    display: none;
+    display: block;
+    visibility: hidden;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 33vw;

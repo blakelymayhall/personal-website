@@ -16,7 +16,7 @@ const pageSwitcher = (menuOption) => {
         domPage.style.cssText = "display:none;";
     });
     const domPageID = domPagesIDs.get(menuOption);
-    document.querySelector(domPageID).style.cssText = "display:block;";
+    document.querySelector(`#${domPageID}`).style.cssText = "display:block;";
 };
 //------------------------------------------------------------------------
 
