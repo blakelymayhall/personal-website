@@ -21,11 +21,9 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
         activeMenuOption = menuOption;
         interfaceLayer.pageChanged(activeMenuOption);
         dropDownButton.textContent = domPortraitMenuOptionsText.get(menuOption);
-        generateDropdownOptions();
     };
 
     const generateDropdownOptions = () => {
-        dropDownContent.innerHTML = "";
         domPortraitMenuOptionsText.forEach((domPortraitMenuOptionText) => {
             const menuOption = document.createElement("p");
             menuOption.setAttribute("id", getKey(domPortraitMenuOptionsText, domPortraitMenuOptionText));
@@ -33,7 +31,8 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
             dropDownContent.appendChild(menuOption);
             menuOption.addEventListener("click", (e) => {
                 updateActiveMenuOption(menuOption.id);
-                dropDownContent.style.cssText = "visibility:hidden;";
+                dropDownContent.style.cssText = "position:relative;visibility:hidden;display:none;";
+                dropDownContent.innerHTML = ""; // Safari on IOS seems to not care about the above line
                 dropDownVisible = false;
                 e.stopPropagation();
             });
@@ -45,7 +44,8 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
     //------------------------------------------------------------------------
     dropDownButton.addEventListener("click", (e) => {
         if (!dropDownVisible) {
-            dropDownContent.style.cssText = "visibility:visible;";
+            generateDropdownOptions();
+            dropDownContent.style.cssText = "position:absolute;visibility:visible;display:block;";
             dropDownVisible = true;
             e.stopPropagation();
         }
@@ -54,7 +54,8 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
     document.querySelector("body").addEventListener("click", (e) => {
         const clickParent = document.querySelector("#" + e.target.id).parentElement;
         if (dropDownVisible && clickParent != dropDownContent && clickParent != dropDownButton) {
-            dropDownContent.style.cssText = "visibility:hidden;";
+            dropDownContent.style.cssText = "position:relative;visibility:hidden;display:none;";
+            dropDownContent.innerHTML = ""; // Safari on IOS seems to not care about the above line
             dropDownVisible = false;
             e.stopPropagation();
         }
@@ -63,7 +64,6 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
 
     // Init
     //------------------------------------------------------------------------
-    generateDropdownOptions(activeMenuOption);
     //------------------------------------------------------------------------
 
     // Export Functions
