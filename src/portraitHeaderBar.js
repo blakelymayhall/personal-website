@@ -31,10 +31,11 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
             menuOption.setAttribute("id", getKey(domPortraitMenuOptionsText, domPortraitMenuOptionText));
             menuOption.textContent = domPortraitMenuOptionText;
             dropDownContent.appendChild(menuOption);
-            menuOption.addEventListener("click", () => {
+            menuOption.addEventListener("click", (e) => {
                 updateActiveMenuOption(menuOption.id);
                 dropDownContent.style.cssText = "visibility:hidden;";
                 dropDownVisible = false;
+                e.stopPropagation();
             });
         });
     };
@@ -55,6 +56,7 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
         if (dropDownVisible && clickParent != dropDownContent && clickParent != dropDownButton) {
             dropDownContent.style.cssText = "visibility:hidden;";
             dropDownVisible = false;
+            e.stopPropagation();
         }
     });
     //------------------------------------------------------------------------
