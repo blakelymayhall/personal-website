@@ -36,6 +36,13 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
                 dropDownVisible = false;
                 e.stopPropagation();
             });
+            menuOption.addEventListener("touchend", (e) => {
+                updateActiveMenuOption(menuOption.id);
+                dropDownContent.style.cssText = "visibility:hidden;display:none;";
+                dropDownContent.innerHTML = ""; // Safari on IOS seems to not care about the above line
+                dropDownVisible = false;
+                e.stopPropagation();
+            });
         });
     };
     //------------------------------------------------------------------------
@@ -55,6 +62,7 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
         const clickParent = document.querySelector("#" + e.target.id).parentElement;
         if (dropDownVisible && clickParent != dropDownContent && clickParent != dropDownButton) {
             dropDownContent.style.cssText = "visibility:hidden;display:none;";
+            dropDownContent.innerHTML = ""; // Safari on IOS seems to not care about the above line
             dropDownVisible = false;
             e.stopPropagation();
         }
