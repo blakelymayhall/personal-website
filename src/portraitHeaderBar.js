@@ -10,12 +10,7 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
         return activeMenuOption;
     };
     //------------------------------------------------------------------------
-
-    // Events
-    //------------------------------------------------------------------------
-
-    //------------------------------------------------------------------------
-
+    
     // Support
     //------------------------------------------------------------------------
     const getKey = (map, val) => {
@@ -38,7 +33,7 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
             dropDownContent.appendChild(menuOption);
             menuOption.addEventListener("click", () => {
                 updateActiveMenuOption(menuOption.id);
-                dropDownContent.style.cssText = "visibility:hidden;";
+                dropDownContent.style.cssText = "visibility:hidden;display:none;";
                 dropDownVisible = false;
             });
         });
@@ -49,7 +44,7 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
     //------------------------------------------------------------------------
     dropDownButton.addEventListener("click", (e) => {
         if (!dropDownVisible) {
-            dropDownContent.style.cssText = "visibility:visible;";
+            dropDownContent.style.cssText = "visibility:visible;display:block;";
             dropDownVisible = true;
             e.stopPropagation();
         }
@@ -58,7 +53,7 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
     document.querySelector("body").addEventListener("click", (e) => {
         const clickParent = document.querySelector("#" + e.target.id).parentElement;
         if (dropDownVisible && clickParent != dropDownContent && clickParent != dropDownButton) {
-            dropDownContent.style.cssText = "visibility:hidden;";
+            dropDownContent.style.cssText = "visibility:hidden;display:none;";
             dropDownVisible = false;
         }
     });
