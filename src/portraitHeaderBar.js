@@ -1,17 +1,16 @@
 const portraitHeaderBarFactory = (interfaceLayer) => {
     // Data
     //------------------------------------------------------------------------
+    const dropDownContent = document.querySelector("#portraitNavBarMenuDropDown-content");
+    const dropDownButton = document.querySelector("#portraitNavBarMenuDropDownButton");
+    let dropDownVisible = false;
+
     let activeMenuOption = portraitMenuOptions.HOME;
     const getActiveMenuOption = () => {
         return activeMenuOption;
     };
     //------------------------------------------------------------------------
-
-    // Events
-    //------------------------------------------------------------------------
-
-    //------------------------------------------------------------------------
-
+    
     // Support
     //------------------------------------------------------------------------
     const getKey = (map, val) => {
@@ -21,21 +20,22 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
     const updateActiveMenuOption = (menuOption) => {
         activeMenuOption = menuOption;
         interfaceLayer.pageChanged(activeMenuOption);
-        document.querySelector("#portraitNavBarMenuDropDownButton").textContent =
-            domPortraitMenuOptionsText.get(menuOption);
+        dropDownButton.textContent = domPortraitMenuOptionsText.get(menuOption);
         generateDropdownOptions();
     };
 
     const generateDropdownOptions = () => {
-        document.querySelector("#portraitNavBarMenuDropDown-content").innerHTML = "";
+        dropDownContent.innerHTML = "";
         domPortraitMenuOptionsText.forEach((domPortraitMenuOptionText) => {
             const menuOption = document.createElement("p");
             menuOption.setAttribute("id", getKey(domPortraitMenuOptionsText, domPortraitMenuOptionText));
             menuOption.textContent = domPortraitMenuOptionText;
-            document.querySelector("#portraitNavBarMenuDropDown-content").appendChild(menuOption);
-            menuOption.addEventListener("click", () => {
+            dropDownContent.appendChild(menuOption);
+            menuOption.addEventListener("click", (e) => {
                 updateActiveMenuOption(menuOption.id);
-                document.querySelector("#portraitNavBarMenuDropDown-content").style.display = "none";
+                dropDownContent.style.cssText = "visibility:hidden;display:none;";
+                dropDownVisible = false;
+                e.stopPropagation();
             });
         });
     };
@@ -43,9 +43,21 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
 
     // Events
     //------------------------------------------------------------------------
-    const dropDownButton = document.querySelector("#portraitNavBarMenuDropDownButton");
-    dropDownButton.addEventListener("click", () => {
-        document.querySelector("#portraitNavBarMenuDropDown-content").style.display = "block";
+    dropDownButton.addEventListener("click", (e) => {
+        if (!dropDownVisible) {
+            dropDownContent.style.cssText = "visibility:visible;display:block;";
+            dropDownVisible = true;
+            e.stopPropagation();
+        }
+    });
+
+    document.querySelector("body").addEventListener("click", (e) => {
+        const clickParent = document.querySelector("#" + e.target.id).parentElement;
+        if (dropDownVisible && clickParent != dropDownContent && clickParent != dropDownButton) {
+            dropDownContent.style.cssText = "visibility:hidden;display:none;";
+            dropDownVisible = false;
+            e.stopPropagation();
+        }
     });
     //------------------------------------------------------------------------
 
@@ -63,13 +75,13 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
 };
 
 const portraitMenuOptions = {
-    HOME: "#portraitHomeLink",
-    EDU: "#portraitEduLink",
-    EXP: "#portraitExperienceLink",
-    PROJ: "#portraitProjectsLink",
-    CURR: "#portraitCurrentActivityLink",
-    BLOG: "#portraitBlogLink",
-    CONT: "#portraitContactLink",
+    HOME: "portraitHomeLink",
+    EDU: "portraitEduLink",
+    EXP: "portraitExperienceLink",
+    PROJ: "portraitProjectsLink",
+    CURR: "portraitCurrentActivityLink",
+    BLOG: "portraitBlogLink",
+    CONT: "portraitContactLink",
 };
 
 const domPortraitMenuOptionsText = new Map();

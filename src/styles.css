@@ -288,10 +288,6 @@ ul {
 }
 
 #portraitNavBarMenuDropDown-content p:hover {background-color: #f1f1f1}
-  
-#portraitNavBarMenuDropDown:hover #portraitNavBarMenuDropDown-content {
-    display: block;
-}
 
 #portraitNavBarMenuDropDown:hover #portraitNavBarMenuDropDownButton {
     background-color: rgb(189, 179, 172);
