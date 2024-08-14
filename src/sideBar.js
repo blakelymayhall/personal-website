@@ -62,7 +62,7 @@ const menuOptions = {
 
 const domMenuOptionsText = new Map();
 domMenuOptionsText.set(menuOptions.HOME, "Home");
-domMenuOptionsText.set(menuOptions.EDU, "Education / Skill");
+domMenuOptionsText.set(menuOptions.EDU, "Education / Skills");
 domMenuOptionsText.set(menuOptions.EXP, "Experience");
 domMenuOptionsText.set(menuOptions.BLOG, "Blog");
 domMenuOptionsText.set(menuOptions.CURR, "Current Activity");
