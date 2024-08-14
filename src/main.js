@@ -47,6 +47,7 @@ let headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
 //------------------------------------------------------------------------
 let portrait = window.matchMedia("(orientation: portrait)");
 portrait.addEventListener("change", function (e) {
+    console.log("ADSFADSF");
     isPortrait = document.body.clientWidth < document.body.clientHeight;
     initPageLoad(isPortrait);
     menuOptionController = isPortrait ? portraitHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
