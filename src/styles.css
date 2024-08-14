@@ -227,7 +227,10 @@ ul {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
-    background: white;
+    background-image: url("./assets/background.png");
+    background-position: 250px;
+    background-repeat: no-repeat;
+    background-size: 800px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -237,6 +240,7 @@ ul {
     font-family: 'RobotoBold';
     font-size: xx-large;
     margin-left: 2rem;
+    background-color: white;
 }
 
 /* #endregion */
@@ -376,6 +380,10 @@ ul {
     display: none;
     width: 101vw;
     height: 100%;
+    background-image: url("./assets/background.png");
+    background-position: 0px;
+    background-repeat: repeat;
+    background-size: 30vh 30vh;
 }
 
 #portraitHomePicture {
