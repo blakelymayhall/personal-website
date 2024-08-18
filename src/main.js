@@ -7,7 +7,7 @@ import { eduSkillsFactory } from "./educationSkills";
 
 // Data
 //------------------------------------------------------------------------
-let isPortrait = document.body.clientWidth < document.body.clientHeight;
+let isPortrait = document.body.clientWidth < document.body.clientHeight && window.screen.availWidth < 1200;
 //------------------------------------------------------------------------
 
 // Support
@@ -49,7 +49,7 @@ let eduSkillsPage = eduSkillsFactory(isPortrait);
 //------------------------------------------------------------------------
 let portrait = window.matchMedia("(orientation: portrait)");
 portrait.addEventListener("change", function (e) {
-    isPortrait = document.body.clientWidth < document.body.clientHeight;
+    isPortrait = mobileAndTabletCheck() && document.body.clientWidth < document.body.clientHeight;
     initPageLoad(isPortrait);
     menuOptionController = isPortrait ? portraitHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
     headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
