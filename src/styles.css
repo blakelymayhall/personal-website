@@ -1,4 +1,4 @@
-/* colors:: https://coolors.co/e8f1f2-15b097-513c2c-28190e-044389 */
+/* colors:: https://coolors.co/12130f-5b9279-8fcb9b-bdd9c0-eae6e5-bdb3ac-8f8073 */
 
 @font-face {
     font-family: 'RobotoBold';
@@ -44,6 +44,7 @@ ul {
     grid-row-start: 2;
     grid-row-end: 4;
     background: rgb(234, 230, 229);
+    overflow-y: scroll;
 }
 
 /* #region Desktop Side Bar */
@@ -431,6 +432,193 @@ ul {
     text-wrap: wrap;
     padding: 1rem;
     font-size: 3rem;
+}
+
+/* #endregion */
+
+/* #region Desktop Edu */
+
+#eduPageContent {
+    height: 100%;
+    display: none;
+}
+
+#educationContainer {
+    min-width: 1160px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 40%;
+    grid-auto-rows: 40%;
+    grid-auto-flow: dense;
+    gap: 5rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+@media (max-width: 1150px) {
+    #educationContainer {
+        grid-template-columns: 40%;
+    }
+}
+
+#educationTitle, #skillsTitle {
+    font-family: 'RobotoBold';
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-size: 3rem;
+    color: rgb(49, 54, 57);
+}
+
+.eduCard {
+    width: 500px;
+    height: 250px;
+    background-color: whitesmoke;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 75% 25%;
+}
+
+.eduCardTitles {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.eduCardImage {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    max-width: 100px;
+    aspect-ratio: 1 / 1;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+}
+
+.univTitle {
+    font-size: 1.2rem;
+    font-family: 'RobotoBold';
+    margin-bottom: 5px;
+}
+
+.degreeTitle {
+    font-size: 1rem;
+    font-family: 'RobotoBold';
+}
+
+.honorsTitle {
+    font-size: 0.88rem;
+    font-family: 'Roboto';
+}
+
+.eduCardDesc {
+    font-size: 0.88rem;
+    font-family: 'Roboto';
+    margin-top: 0.6rem;
+    margin-right: 5px;
+}
+
+.eduCardNotableContainer {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-top: 5px;
+}
+
+.eduCardNotableCourseList {
+    display: flex;
+    flex-direction: row;
+    list-style-type: square;
+    gap: 2rem;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-left: 1rem;
+}
+
+.eduCardNotable {
+    font-family: 'Roboto';
+    text-decoration: underline;
+}
+
+.eduCardNotableCourseList li {
+    font-size: 0.88rem;
+    font-family: 'Roboto';
+    min-width: 210px;
+}
+
+#skillsContainer {
+    min-width: 1160px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 40%;
+    grid-auto-rows: 40%;
+    grid-auto-flow: dense;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+@media (max-width: 1150px) {
+    #skillsContainer {
+        grid-template-columns: 20% 20%;
+        grid-template-rows: 30%;
+        grid-auto-rows: 30%;
+    }
+}
+
+.skillCard {
+    width: 200px;
+    height: 100px;
+    background-color: whitesmoke;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 1rem;
+}
+
+.skillTitle {
+    width: 100%;
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'RobotoBold';
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.skillList {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    list-style-type: square;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.skillList li {
+    font-size: 0.88rem;
+    font-family: 'Roboto';
+    max-width: 175px;
+    margin-left: 33px;
 }
 
 /* #endregion */

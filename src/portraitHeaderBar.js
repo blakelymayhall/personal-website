@@ -76,8 +76,8 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
 
 const portraitMenuOptions = {
     HOME: "portraitHomeLink",
-    EDU: "portraitEduLink",
     EXP: "portraitExperienceLink",
+    EDU: "portraitEduLink",
     PROJ: "portraitProjectsLink",
     CURR: "portraitCurrentActivityLink",
     BLOG: "portraitBlogLink",
@@ -86,8 +86,8 @@ const portraitMenuOptions = {
 
 const domPortraitMenuOptionsText = new Map();
 domPortraitMenuOptionsText.set(portraitMenuOptions.HOME, "Home");
-domPortraitMenuOptionsText.set(portraitMenuOptions.EDU, "Education / Skills");
 domPortraitMenuOptionsText.set(portraitMenuOptions.EXP, "Experience");
+domPortraitMenuOptionsText.set(portraitMenuOptions.EDU, "Education / Skills");
 domPortraitMenuOptionsText.set(portraitMenuOptions.BLOG, "Blog");
 domPortraitMenuOptionsText.set(portraitMenuOptions.CURR, "Current Activity");
 domPortraitMenuOptionsText.set(portraitMenuOptions.CONT, "Contact");

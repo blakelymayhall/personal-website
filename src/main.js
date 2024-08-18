@@ -3,6 +3,7 @@ import { initPageLoad, domPages, domPagesIDs } from "./initPageLoad";
 import { sideBarFactory, domMenuOptionsText } from "./sideBar";
 import { portraitHeaderBarFactory } from "./portraitHeaderBar";
 import { headerBarFactory } from "./headerBar";
+import { eduSkillsFactory } from "./educationSkills";
 
 // Data
 //------------------------------------------------------------------------
@@ -41,6 +42,7 @@ const interfaceLayer = () => {
 initPageLoad(isPortrait);
 let menuOptionController = isPortrait ? portraitHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
 let headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
+let eduSkillsPage = eduSkillsFactory(isPortrait);
 //------------------------------------------------------------------------
 
 // Events
