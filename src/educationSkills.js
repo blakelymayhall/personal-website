@@ -1,7 +1,7 @@
 import { eduCards } from "./educationCardData";
 import { skillCards } from "./skillCardData";
 
-const eduSkillsFactory = () => {
+const eduSkillsFactory = (isPortrait) => {
 
     // Data
     //------------------------------------------------------------------------
@@ -70,6 +70,53 @@ const eduSkillsFactory = () => {
         writeSkillCardDOM(cardData); 
     });
     templateSkillCardDOM.parentElement.removeChild(templateSkillCardDOM);
+
+    // Style Update for Portrait Mode
+    if (isPortrait) {
+        document.querySelector("#educationContainer").style.cssText = "min-width: 0;grid-template-columns: 90%;" + 
+            "grid-template-rows: 500px;grid-auto-rows:500px;";
+        const eduCardDOMs = document.querySelectorAll(".eduCard");
+        eduCardDOMs.forEach((eduCardDOM) => {
+            eduCardDOM.style.cssText = "width: 100%; height:100%;"
+        });
+        document.querySelector("#educationTitle").style.cssText = "font-size: 4rem;"
+        document.querySelector("#skillsTitle").style.cssText = "font-size: 4rem;margin-top: 7rem;"
+        const eduCardUnivTitlesDOM = document.querySelectorAll(".univTitle");
+        eduCardUnivTitlesDOM.forEach((eduCardUnivTitleDOM) => {
+            eduCardUnivTitleDOM.style.cssText = "font-size: 2.5rem;"
+        });
+        const eduCardDegreeTitlesDOM = document.querySelectorAll(".degreeTitle");
+        eduCardDegreeTitlesDOM.forEach((eduCardDegreeTitleDOM) => {
+            eduCardDegreeTitleDOM.style.cssText = "font-size: 2rem;"
+        });
+        const eduCardHonorsTitlesDOM = document.querySelectorAll(".honorsTitle,.eduCardDesc");
+        eduCardHonorsTitlesDOM.forEach((eduCardHonorsTitleDOM) => {
+            eduCardHonorsTitleDOM.style.cssText = "font-size: 1.6rem;"
+        });
+        const eduCardDescsDOM = document.querySelectorAll(".eduCardDesc");
+        eduCardDescsDOM.forEach((eduCardDescDOM) => {
+            eduCardDescDOM.style.cssText = "font-size: 1.6rem;margin-top:3rem;"
+        });
+        const eduCardNotablesDOM = document.querySelectorAll(".eduCardNotable,.eduCardNotableCourseList li ");
+        eduCardNotablesDOM.forEach((eduCardNotableDOM) => {
+            eduCardNotableDOM.style.cssText = "font-size: 1.6rem;min-width:410px;max-width:410px;"
+        });
+
+        document.querySelector("#skillsContainer").style.cssText = "min-width: 0;grid-template-columns: 40% 40%;" + 
+        "grid-template-rows: 200px;grid-auto-rows:200px;gap:5rem;";
+        const skillCardDOMs = document.querySelectorAll(".skillCard");
+        skillCardDOMs.forEach((skillCardDOM) => {
+            skillCardDOM.style.cssText = "width: 100%; height:100%;"
+        const skillCardTitlesDOM = document.querySelectorAll(".skillTitle");
+        skillCardTitlesDOM.forEach((skillCardTitleDOM) => {
+            skillCardTitleDOM.style.cssText = "font-size: 2.4rem;"
+        });   
+        const skillCardItemsDOM = document.querySelectorAll(".skillList li ");
+        skillCardItemsDOM.forEach((skillCardItemDOM) => {
+            skillCardItemDOM.style.cssText = "font-size: 1.6rem;min-width:310px;max-width:310px;"
+        });
+    });
+    }
     //------------------------------------------------------------------------
 
 };

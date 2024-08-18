@@ -42,7 +42,7 @@ const interfaceLayer = () => {
 initPageLoad(isPortrait);
 let menuOptionController = isPortrait ? portraitHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
 let headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
-let eduSkillsPage = isPortrait ? null : eduSkillsFactory();
+let eduSkillsPage = eduSkillsFactory(isPortrait);
 //------------------------------------------------------------------------
 
 // Events
