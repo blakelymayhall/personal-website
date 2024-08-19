@@ -528,6 +528,10 @@ ul {
     margin-right: 1.5rem;
 }
 
+.eduCardImage.portrait {
+    max-width: 200px;
+}
+
 .univTitle {
     font-size: 1.2rem;
     font-family: 'RobotoBold';
