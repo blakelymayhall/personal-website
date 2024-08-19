@@ -457,6 +457,13 @@ ul {
     margin-left: 2rem;
 }
 
+#educationContainer.portrait {
+    min-width: 0;
+    grid-template-columns: 90%;
+    grid-template-rows: 500px;
+    grid-auto-rows: 500px;
+}
+
 @media (max-width: 1150px) {
     #educationContainer {
         grid-template-columns: 40%;
@@ -469,6 +476,14 @@ ul {
     margin-left: 2rem;
     font-size: 3rem;
     color: rgb(49, 54, 57);
+}
+
+#educationTitle.portrait, #skillsTitle.portrait {
+    font-size: 4rem;
+}
+
+#skillsTitle.portrait {
+    margin-top: 7rem;
 }
 
 .eduCard {
@@ -484,6 +499,11 @@ ul {
     display: grid;
     grid-template-columns: 75% 25%;
     grid-template-rows: 75% 25%;
+}
+
+.eduCard.portrait {
+    width: 100%; 
+    height:100%;
 }
 
 .eduCardTitles {
@@ -510,9 +530,17 @@ ul {
     margin-bottom: 5px;
 }
 
+.univTitle.portrait {
+    font-size: 2.5rem;
+}
+
 .degreeTitle {
     font-size: 1rem;
     font-family: 'RobotoBold';
+}
+
+.degreeTitle.portrait {
+    font-size: 2rem;
 }
 
 .honorsTitle {
@@ -520,11 +548,20 @@ ul {
     font-family: 'Roboto';
 }
 
+.honorsTitle.portrait {
+    font-size: 1.6rem;
+}
+
 .eduCardDesc {
     font-size: 0.88rem;
     font-family: 'Roboto';
     margin-top: 0.6rem;
     margin-right: 5px;
+}
+
+.eduCardDesc.portrait {
+    font-size: 1.6rem;
+    margin-top:3rem;
 }
 
 .eduCardNotableContainer {
@@ -552,6 +589,12 @@ ul {
     text-decoration: underline;
 }
 
+.eduCardNotable.portrait, .eduCardNotableCourseList li.portrait{
+    font-size: 1.6rem;
+    min-width:410px;
+    max-width:410px;
+}
+
 .eduCardNotableCourseList li {
     font-size: 0.88rem;
     font-family: 'Roboto';
@@ -570,6 +613,14 @@ ul {
     gap: 2rem;
     margin-top: 2rem;
     margin-left: 2rem;
+}
+
+#skillsContainer.portrait {
+    min-width: 0;
+    grid-template-columns: 40% 40%;  
+    grid-template-rows: 200px;
+    grid-auto-rows:200px;
+    gap:5rem;
 }
 
 @media (max-width: 1150px) {
@@ -592,6 +643,11 @@ ul {
     padding: 1rem;
 }
 
+.skillCard.portrait {
+    width: 100%; 
+    height:100%;
+}
+
 .skillTitle {
     width: 100%;
     text-align: center;
@@ -599,6 +655,10 @@ ul {
     font-family: 'RobotoBold';
     font-size: 1.2rem;
     margin-bottom: 5px;
+}
+
+.skillTitle.portrait {
+    font-size: 2.4rem;
 }
 
 .skillList {
@@ -619,6 +679,12 @@ ul {
     font-family: 'Roboto';
     max-width: 175px;
     margin-left: 33px;
+}
+
+.skillList li.portrait {
+    font-size: 1.6rem;
+    min-width:310px;
+    max-width:310px;
 }
 
 /* #endregion */
