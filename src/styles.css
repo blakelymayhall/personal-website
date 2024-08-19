@@ -617,6 +617,7 @@ ul {
     gap: 2rem;
     margin-top: 2rem;
     margin-left: 2rem;
+    padding-bottom: 300px;
 }
 
 #skillsContainer.portrait {
@@ -625,6 +626,7 @@ ul {
     grid-template-rows: 200px;
     grid-auto-rows:200px;
     gap:5rem;
+    padding-bottom: 400px;
 }
 
 @media (max-width: 1150px) {
