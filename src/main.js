@@ -49,10 +49,11 @@ let eduSkillsPage = eduSkillsFactory(isPortrait);
 //------------------------------------------------------------------------
 let portrait = window.matchMedia("(orientation: portrait)");
 portrait.addEventListener("change", function (e) {
-    isPortrait = mobileAndTabletCheck() && document.body.clientWidth < document.body.clientHeight;
+    isPortrait = document.body.clientWidth < document.body.clientHeight && window.screen.availWidth < 1200;
     initPageLoad(isPortrait);
     menuOptionController = isPortrait ? portraitHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
     headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
+    eduSkillsPage.switchOrientation(isPortrait);
 });
 //------------------------------------------------------------------------
 
