@@ -4,6 +4,7 @@ import { sideBarFactory, domMenuOptionsText } from "./sideBar";
 import { portraitHeaderBarFactory } from "./portraitHeaderBar";
 import { headerBarFactory } from "./headerBar";
 import { eduSkillsFactory } from "./educationSkills";
+import { expFactory } from "./experience";
 
 // Data
 //------------------------------------------------------------------------
@@ -43,6 +44,7 @@ initPageLoad(isPortrait);
 let menuOptionController = isPortrait ? portraitHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
 let headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
 let eduSkillsPage = eduSkillsFactory(isPortrait);
+let expPage = expFactory(isPortrait);
 //------------------------------------------------------------------------
 
 // Events
@@ -54,6 +56,7 @@ portrait.addEventListener("change", function (e) {
     menuOptionController = isPortrait ? portraitHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
     headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
     eduSkillsPage.switchOrientation(isPortrait);
+    expPage.switchOrientation(isPortrait);
 });
 //------------------------------------------------------------------------
 
