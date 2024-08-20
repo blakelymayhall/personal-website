@@ -743,6 +743,7 @@ ul {
 }
 
 .expLink.portrait { 
+    font-family:'Times New Roman', Times, serif;
     font-size: 1.8rem;
 }
 
