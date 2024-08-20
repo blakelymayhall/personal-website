@@ -752,7 +752,8 @@ ul {
 }
 
 .expJob.portrait {
-    font-size: 1.8rem;
+    margin-top: 10px;
+    font-size: 2rem;
 }
 
 .expDate, .expDesc {
