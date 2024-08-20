@@ -42,8 +42,9 @@ const expFactory = (isPortrait) => {
                 endDate[0], Number(endDate[1]));
             elapsedYears += elapsedTime.years;
             elapsedMos += elapsedTime.months;
-        }
-        dateString = dateString + ` (${elapsedYears} yrs ${elapsedMos} mos)`
+        } 
+        dateString = dateString + (elapsedYears > 0 ? 
+        ` (${elapsedYears} yrs ${elapsedMos} mos)` : ` (${elapsedMos} mos)`)
         newSectionDOM.querySelector(".expDate").textContent = dateString;
         desktopExpPageContent.appendChild(newSectionDOM);
         return newSectionDOM;
