@@ -1,6 +1,6 @@
 import { profilePictureOverlayFactory } from "./profilePictureOverlay";
 
-const sideBarFactory = (interfaceLayer) => {
+const sideBarFactory = (interfaceLayer, initMenuOptionText = null) => {
     // Data
     //------------------------------------------------------------------------
     let profilePictureOverlay = profilePictureOverlayFactory();
@@ -35,10 +35,17 @@ const sideBarFactory = (interfaceLayer) => {
         });
         document.querySelector(`#${menuOption}`).style.cssText = "text-decoration:underline;font-family:'RobotoBold';";
     };
+
+    const getKey = (map, val) => {
+        return [...map].find(([key, value]) => val === value)[0];
+    };
     //------------------------------------------------------------------------
 
     // Init
     //------------------------------------------------------------------------
+    if (initMenuOptionText != null) {
+        activeMenuOption = getKey(domMenuOptionsText,initMenuOptionText);  
+    }
     applyActiveMenuOptionDecor(activeMenuOption);
     //------------------------------------------------------------------------
 

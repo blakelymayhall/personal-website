@@ -245,6 +245,7 @@ ul {
     font-size: xx-large;
     margin-left: 2rem;
     background-color: white;
+    border: none;
 }
 
 /* #endregion */

@@ -1,7 +1,7 @@
 import "./styles.css";
 import { initPageLoad, domPages, domPagesIDs } from "./initPageLoad";
 import { sideBarFactory, domMenuOptionsText } from "./sideBar";
-import { portraitHeaderBarFactory } from "./portraitHeaderBar";
+import { portraitHeaderBarFactory, domPortraitMenuOptionsText } from "./portraitHeaderBar";
 import { headerBarFactory } from "./headerBar";
 import { eduSkillsFactory } from "./educationSkills";
 import { expFactory } from "./experience";
@@ -53,8 +53,12 @@ let portrait = window.matchMedia("(orientation: portrait)");
 portrait.addEventListener("change", function (e) {
     isPortrait = document.body.clientWidth < document.body.clientHeight && window.screen.availWidth < 1200;
     initPageLoad(isPortrait);
-    menuOptionController = isPortrait ? portraitHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
-    headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
+    const domMenuOptions = isPortrait ?  domMenuOptionsText : domPortraitMenuOptionsText;
+    const activeMenuOptionText = domMenuOptions.get(menuOptionController.getActiveMenuOption());
+    menuOptionController = isPortrait
+        ? portraitHeaderBarFactory(interfaceLayer(), activeMenuOptionText)
+        : sideBarFactory(interfaceLayer(), activeMenuOptionText);
+    headerBar = isPortrait ? null : headerBarFactory(interfaceLayer(), activeMenuOptionText);
     eduSkillsPage.switchOrientation(isPortrait);
     expPage.switchOrientation(isPortrait);
 });
