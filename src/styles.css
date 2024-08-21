@@ -467,8 +467,8 @@ ul {
 #educationContainer.portrait {
     min-width: 0;
     grid-template-columns: 95%;
-    grid-template-rows: 500px;
-    grid-auto-rows: 500px;
+    grid-template-rows: 650px;
+    grid-auto-rows: 650px;
 }
 
 @media (max-width: 1150px) {
@@ -542,7 +542,7 @@ ul {
 }
 
 .univTitle.portrait {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
 }
 
 .degreeTitle {
@@ -551,7 +551,7 @@ ul {
 }
 
 .degreeTitle.portrait {
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 
 .honorsTitle {
@@ -560,7 +560,7 @@ ul {
 }
 
 .honorsTitle.portrait {
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 
 .eduCardDesc {
@@ -571,7 +571,7 @@ ul {
 }
 
 .eduCardDesc.portrait {
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin-top:3rem;
 }
 
@@ -601,7 +601,7 @@ ul {
 }
 
 .eduCardNotable.portrait, .eduCardNotableCourseList li.portrait{
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     min-width:410px;
     max-width:410px;
 }
@@ -630,10 +630,10 @@ ul {
 #skillsContainer.portrait {
     min-width: 0;
     grid-template-columns: 40% 40%;  
-    grid-template-rows: 200px;
-    grid-auto-rows:200px;
+    grid-template-rows: 400px;
+    grid-auto-rows:400px;
     gap:5rem;
-    padding-bottom: 400px;
+    padding-bottom: 600px;
 }
 
 @media (max-width: 1150px) {
@@ -671,7 +671,7 @@ ul {
 }
 
 .skillTitle.portrait {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
 }
 
 .skillList {
@@ -695,7 +695,7 @@ ul {
 }
 
 .skillList li.portrait {
-    font-size: 1.6rem;
+    font-size: 2rem;
     min-width:310px;
     max-width:310px;
 }
