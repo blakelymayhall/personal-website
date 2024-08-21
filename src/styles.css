@@ -870,4 +870,8 @@ ul {
     height: 300px;
 }
 
+.expSectionBuffer.portrait {
+    height: 500px;
+}
+
 /* #endregion */
