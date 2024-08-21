@@ -5,6 +5,10 @@ const eduSkillsFactory = (isPortrait) => {
 
     // Data
     //------------------------------------------------------------------------
+    const templateEduCardDOM = document.querySelector(".eduCard");
+    const educationContainer = document.querySelector("#educationContainer");
+    const templateSkillCardDOM = document.querySelector(".skillCard");
+    const skillsContainer = document.querySelector("#skillsContainer");
     //------------------------------------------------------------------------
 
     // Support
@@ -67,16 +71,12 @@ const eduSkillsFactory = (isPortrait) => {
     // Init
     //------------------------------------------------------------------------
     // Education Cards
-    const templateEduCardDOM = document.querySelector(".eduCard");
-    const educationContainer = document.querySelector("#educationContainer");
     eduCards.forEach((cardData) => {
         writeEduCardDOM(cardData); 
     });
     templateEduCardDOM.parentElement.removeChild(templateEduCardDOM);
 
     // Skill Cards
-    const templateSkillCardDOM = document.querySelector(".skillCard");
-    const skillsContainer = document.querySelector("#skillsContainer");
     skillCards.forEach((cardData) => {
         writeSkillCardDOM(cardData); 
     });

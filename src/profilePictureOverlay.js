@@ -5,7 +5,6 @@ const profilePictureOverlayFactory = () => {
     const getProfilePictureOverlayActive = () => {
         return profilePictureOverlayActive;
     };
-
     const docProfPicture = document.querySelector("#profPic");
     //------------------------------------------------------------------------
 

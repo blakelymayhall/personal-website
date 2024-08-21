@@ -4,7 +4,6 @@ const portraitHeaderBarFactory = (interfaceLayer, initMenuOptionText = null) => 
     const dropDownContent = document.querySelector("#portraitNavBarMenuDropDown-content");
     const dropDownButton = document.querySelector("#portraitNavBarMenuDropDownButton");
     let dropDownVisible = false;
-
     let activeMenuOption = portraitMenuOptions.HOME;
     const getActiveMenuOption = () => {
         return activeMenuOption;
@@ -63,7 +62,7 @@ const portraitHeaderBarFactory = (interfaceLayer, initMenuOptionText = null) => 
 
     // Init
     //------------------------------------------------------------------------
-    generateDropdownOptions(activeMenuOption);
+    generateDropdownOptions();
 
     if (initMenuOptionText != null) {
         activeMenuOption = getKey(domPortraitMenuOptionsText,initMenuOptionText);  

@@ -20,6 +20,19 @@ const pageSwitcher = (menuOption) => {
     const domPageID = domPagesIDs.get(menuOption);
     document.querySelector(`#${domPageID}`).style.cssText = "display:block;";
 };
+
+const orientationChange = () => {
+    isPortrait = document.body.clientWidth < document.body.clientHeight && window.screen.availWidth < 1200;
+    initPageLoad(isPortrait);
+    const domMenuOptions = isPortrait ?  domMenuOptionsText : domPortraitMenuOptionsText;
+    const activeMenuOptionText = domMenuOptions.get(menuOptionController.getActiveMenuOption());
+    menuOptionController = isPortrait
+        ? portraitHeaderBarFactory(interfaceLayer(), activeMenuOptionText)
+        : sideBarFactory(interfaceLayer(), activeMenuOptionText);
+    headerBar = isPortrait ? null : headerBarFactory(interfaceLayer(), activeMenuOptionText);
+    eduSkillsPage.switchOrientation(isPortrait);
+    expPage.switchOrientation(isPortrait);
+};
 //------------------------------------------------------------------------
 
 // Interface Layer
@@ -50,17 +63,8 @@ let expPage = expFactory(isPortrait);
 // Events
 //------------------------------------------------------------------------
 let portrait = window.matchMedia("(orientation: portrait)");
-portrait.addEventListener("change", function (e) {
-    isPortrait = document.body.clientWidth < document.body.clientHeight && window.screen.availWidth < 1200;
-    initPageLoad(isPortrait);
-    const domMenuOptions = isPortrait ?  domMenuOptionsText : domPortraitMenuOptionsText;
-    const activeMenuOptionText = domMenuOptions.get(menuOptionController.getActiveMenuOption());
-    menuOptionController = isPortrait
-        ? portraitHeaderBarFactory(interfaceLayer(), activeMenuOptionText)
-        : sideBarFactory(interfaceLayer(), activeMenuOptionText);
-    headerBar = isPortrait ? null : headerBarFactory(interfaceLayer(), activeMenuOptionText);
-    eduSkillsPage.switchOrientation(isPortrait);
-    expPage.switchOrientation(isPortrait);
+portrait.addEventListener("change", () => {
+    orientationChange();
 });
 //------------------------------------------------------------------------
 
