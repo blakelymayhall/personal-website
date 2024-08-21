@@ -1,4 +1,4 @@
-const headerBarFactory = () => {
+const headerBarFactory = (interfaceLayer, initMenuOptionText = null) => {
     // Data
     //------------------------------------------------------------------------
     const domHeaderBarTitle = document.querySelector("#headerBarTitle");
@@ -13,7 +13,13 @@ const headerBarFactory = () => {
 
     // Events
     //------------------------------------------------------------------------
+    //------------------------------------------------------------------------
 
+    // Init
+    //------------------------------------------------------------------------
+    if (initMenuOptionText != null) {
+        updateHeaderTitle(initMenuOptionText);
+    }
     //------------------------------------------------------------------------
 
     return {

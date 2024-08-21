@@ -1,4 +1,4 @@
-const portraitHeaderBarFactory = (interfaceLayer) => {
+const portraitHeaderBarFactory = (interfaceLayer, initMenuOptionText = null) => {
     // Data
     //------------------------------------------------------------------------
     const dropDownContent = document.querySelector("#portraitNavBarMenuDropDown-content");
@@ -64,6 +64,11 @@ const portraitHeaderBarFactory = (interfaceLayer) => {
     // Init
     //------------------------------------------------------------------------
     generateDropdownOptions(activeMenuOption);
+
+    if (initMenuOptionText != null) {
+        activeMenuOption = getKey(domPortraitMenuOptionsText,initMenuOptionText);  
+        dropDownButton.textContent = initMenuOptionText;
+    }
     //------------------------------------------------------------------------
 
     // Export Functions
