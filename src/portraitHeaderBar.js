@@ -52,7 +52,6 @@ const portraitHeaderBarFactory = (interfaceLayer, initMenuOptionText = null) => 
 
     document.querySelector("body").addEventListener("click", (e) => {
         const clickParent = e.target.parentElement;
-        console.log(clickParent);
         if (dropDownVisible && clickParent != dropDownContent && clickParent != dropDownButton) {
             dropDownContent.style.cssText = "visibility:hidden;display:none;";
             dropDownVisible = false;
