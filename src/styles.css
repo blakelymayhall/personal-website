@@ -707,7 +707,7 @@ ul {
 /* #region Desktop Exp */
 #expPageContent {
     height: 100%;
-    display: block;
+    display: none;
 }
 
 #desktopExpPageContent {
