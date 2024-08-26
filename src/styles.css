@@ -387,11 +387,13 @@ ul {
     background-color: rgb(234, 230, 229);
     display: none;
     width: 101vw;
-    height: 100%;
+    height: 150%;
+    position: relative;
     background-image: url("./assets/background.png");
     background-position: 0px;
     background-repeat: repeat;
     background-size: 30vh 30vh;
+    overflow-y: scroll;
 }
 
 #portraitHomePicture {
@@ -406,7 +408,7 @@ ul {
     color: rgb(18, 19, 15);
     font-family: 'Roboto';
     position: absolute;
-    top: 27vh;
+    top: 5vh;
     left: 3vw;
     display: flex;
     flex-direction: column;
@@ -428,7 +430,7 @@ ul {
     min-width: 300px;
     height: fit-content;
     border-radius: 15px;
-    top: 65vh;
+    top: 45vh;
     left: 5vw;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     display: flex;
@@ -884,6 +886,115 @@ ul {
 
 .expSectionBuffer.portrait {
     height: 500px;
+}
+
+/* #endregion */
+
+/* #region Desktop contact */
+
+#contPageContent {
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow-y: scroll;
+}
+
+#contPageContent.portrait {
+    position: relative;
+    height: 1900px;
+}
+
+#contactTitleBlock {
+    min-width: 260px;
+    width: fit-content;
+    color: rgb(18, 19, 15);
+    font-family: 'Roboto';
+    position: absolute;
+    top: 10rem;
+    left: max(27vw, 300px);
+    display: flex;
+    flex-direction: column;
+    font-size: xx-large;
+    gap: 1rem;
+    z-index: 0;
+}
+
+#contactTitleBlock.portrait {
+    font-size: 4rem;
+    left: 3vw;
+}
+
+#contactTitleBlock p {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    background-color: rgb(143, 203, 155);
+}
+
+#contactFormContainer {
+    position: absolute;
+    top: 200px;
+    left: max(600px, 50vw);
+    width: 550px;
+    height: 500px;
+    background-color: rgb(189, 179, 172);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-width: 2px;
+    border-radius: 2rem;
+}
+
+#contactFormContainer.portrait {
+    top: 25vh;
+    left: 5vw;
+    width: 90%;
+    height: 1200px;
+}
+
+#contactFormContainer form {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto';
+}
+
+#contactFormContainer form.portrait {
+    font-size: 3rem;
+}
+
+#contactFormContainer form input.portrait {
+    font-size: 3rem;
+    height: 3rem;
+}
+
+#msg {
+    height: 200px;
+}
+
+#msg.portrait {
+    font-size: 3rem;
+    height: 450px;
+}
+
+#submit {
+    width: fit-content;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-width: 2px;
+    border-radius: 0.76rem;
+    margin-left: 170px;
+}
+
+#contactFormContainer form #submit.portrait {
+    width: fit-content;
+    height: fit-content;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 3rem;
+    margin-left: 260px;
 }
 
 /* #endregion */
