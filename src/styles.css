@@ -810,7 +810,7 @@ ul {
 
 .expCards.portrait  {
     min-width: 0;
-    grid-template-columns: 90%;  
+    grid-template-columns: 95%;  
     grid-template-rows: 400px;
     grid-auto-rows:400px;
     gap:5rem;
