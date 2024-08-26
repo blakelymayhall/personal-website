@@ -2,8 +2,10 @@ const contactFactory = (isPortrait) => {
     // Events
     //------------------------------------------------------------------------
     document.querySelector("#contactForm").onsubmit = (e) => {
-        e.preventDefault();
-        console.log("Got em");
+        alert(
+            "Please verify you are human on the following page to send message.\n\n" + 
+            "Page will refresh after successful message send"
+        );
     };
     //------------------------------------------------------------------------
 
@@ -29,6 +31,8 @@ const contactFactory = (isPortrait) => {
     // Style Update for Portrait Mode
     switchOrientation(isPortrait);
     //------------------------------------------------------------------------
+
+    return { switchOrientation };
 };
 
 export { contactFactory };
