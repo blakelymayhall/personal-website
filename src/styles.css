@@ -13,11 +13,15 @@
 }
 
 body {
-    position: fixed;
+    position: relative;
     overflow-y: scroll;
     padding: 0;
     margin: 0;
     width: 100%;
+}
+
+body.portrait {
+    position: fixed;
 }
 
 html, body, p, ul {
@@ -31,13 +35,20 @@ ul {
 
 #mainContainer {
     display: grid;
+    position: relative;
     min-width: 100vw;
     width: fit-content;
-    height: 100vh;
+    max-height: 100vh;
     min-height: 700px;
     grid-template-columns: max(18%,260px) 82%;
     grid-template-rows: 8% 10% 82%;
     flex-direction: column;
+}
+
+#mainContainer.portrait {
+    position: fixed;
+    height: 100vh;
+    max-height: 999vh;
 }
 
 #mainContentWindow {
@@ -58,7 +69,7 @@ ul {
     background-image: url("assets/IMG_5527.jpeg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    z-index: 1;
+    z-index: 10;
     border-color: black;
     border-style: solid;
     border-width: 2px;
@@ -85,6 +96,7 @@ ul {
     grid-row-end: 4;
     color: rgb(232, 241, 242);
     font-family: 'Roboto';
+    overflow-y: scroll;
 }
 
 #profPic {
@@ -905,12 +917,12 @@ ul {
 }
 
 #contactTitleBlock {
-    min-width: 260px;
+    min-width: 400px;
     width: fit-content;
     color: rgb(18, 19, 15);
     font-family: 'Roboto';
     position: absolute;
-    top: 10rem;
+    top: 6rem;
     left: max(27vw, 300px);
     display: flex;
     flex-direction: column;
@@ -933,7 +945,7 @@ ul {
 #contactFormContainer {
     position: absolute;
     top: 200px;
-    left: max(600px, 50vw);
+    left: max(300px, 40%);
     width: 550px;
     height: 500px;
     background-color: rgb(189, 179, 172);
