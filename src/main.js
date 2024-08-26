@@ -5,11 +5,11 @@ import { portraitHeaderBarFactory, domPortraitMenuOptionsText } from "./portrait
 import { headerBarFactory } from "./headerBar";
 import { eduSkillsFactory } from "./educationSkills";
 import { expFactory } from "./experience";
-import { contact, contactFactory } from "./contact";
+import { contactFactory } from "./contact";
 
 // Data
 //------------------------------------------------------------------------
-let isPortrait = document.body.clientWidth < document.body.clientHeight && window.screen.availWidth < 1200;
+let isPortrait = window.screen.availWidth < window.screen.availHeight && window.screen.availWidth < 1200;
 //------------------------------------------------------------------------
 
 // Support
@@ -24,8 +24,15 @@ const pageSwitcher = (menuOption) => {
 
 const orientationChange = () => {
     isPortrait = document.body.clientWidth < document.body.clientHeight && window.screen.availWidth < 1200;
+    if (isPortrait) {
+        document.body.classList.add("portrait");
+        document.querySelector("#mainContainer").classList.add("portrait");
+    } else {
+        document.body.classList.remove("portrait");
+        document.querySelector("#mainContainer").classList.remove("portrait");
+    }
     initPageLoad(isPortrait);
-    const domMenuOptions = isPortrait ?  domMenuOptionsText : domPortraitMenuOptionsText;
+    const domMenuOptions = isPortrait ? domMenuOptionsText : domPortraitMenuOptionsText;
     const activeMenuOptionText = domMenuOptions.get(menuOptionController.getActiveMenuOption());
     menuOptionController = isPortrait
         ? portraitHeaderBarFactory(interfaceLayer(), activeMenuOptionText)
@@ -55,6 +62,13 @@ const interfaceLayer = () => {
 
 // Init
 //------------------------------------------------------------------------
+if (isPortrait) {
+    document.body.classList.add("portrait");
+    document.querySelector("#mainContainer").classList.add("portrait");
+} else {
+    document.body.classList.remove("portrait");
+    document.querySelector("#mainContainer").classList.remove("portrait");
+}
 initPageLoad(isPortrait);
 let menuOptionController = isPortrait ? portraitHeaderBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
 let headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
