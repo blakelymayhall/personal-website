@@ -6,6 +6,7 @@ import { headerBarFactory } from "./headerBar";
 import { eduSkillsFactory } from "./educationSkills";
 import { expFactory } from "./experience";
 import { contactFactory } from "./contact";
+import { projectFactory } from "./project";
 
 // Data
 //------------------------------------------------------------------------
@@ -41,6 +42,7 @@ const orientationChange = () => {
     eduSkillsPage.switchOrientation(isPortrait);
     expPage.switchOrientation(isPortrait);
     contactPage.switchOrientation(isPortrait);
+    projPage.switchOrientation(isPortrait);
 };
 //------------------------------------------------------------------------
 
@@ -75,6 +77,7 @@ let headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
 let eduSkillsPage = eduSkillsFactory(isPortrait);
 let expPage = expFactory(isPortrait);
 let contactPage = contactFactory(isPortrait);
+let projPage = projectFactory(isPortrait);
 //------------------------------------------------------------------------
 
 // Events
