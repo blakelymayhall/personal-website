@@ -1,4 +1,4 @@
-import { expData, ExpCard } from "./expCardData";
+import { expData } from "./expCardData";
 
 const expFactory = (isPortrait) => {
     // Data
@@ -9,8 +9,20 @@ const expFactory = (isPortrait) => {
     sectionBreak.classList.add("expSectionBreak");
     const sectionEndBuffer = document.createElement("div");
     sectionEndBuffer.classList.add("expSectionBuffer");
-    const monthNames = ["January", "February", "March", "April", "May", "June", 
-        "July", "August", "September", "October", "November", "December"];
+    const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
     const expCardTemplateDOM = document.querySelector(".expCard.template");
     //------------------------------------------------------------------------
 
@@ -32,19 +44,23 @@ const expFactory = (isPortrait) => {
             let endDate = companyData.endMonYear[idx];
             if (endDate == "Present") {
                 const currentDate = new Date();
-                endDate = [monthNames[currentDate.getMonth()],currentDate.getFullYear().toString()];
+                endDate = [monthNames[currentDate.getMonth()], currentDate.getFullYear().toString()];
             }
-            dateString += `${startDate[0]} ${startDate[1]} to ${endDate[0]} ${endDate[1]}`
-            if (companyData.startMonYear.length > 1 && companyData.startMonYear.length != idx+1) {
-                dateString += ", "
+            dateString += `${startDate[0]} ${startDate[1]} to ${endDate[0]} ${endDate[1]}`;
+            if (companyData.startMonYear.length > 1 && companyData.startMonYear.length != idx + 1) {
+                dateString += ", ";
             }
-            const elapsedTime = calculateElapsedTime(startDate[0], Number(startDate[1]),
-                endDate[0], Number(endDate[1]));
+            const elapsedTime = calculateElapsedTime(
+                startDate[0],
+                Number(startDate[1]),
+                endDate[0],
+                Number(endDate[1])
+            );
             elapsedYears += elapsedTime.years;
             elapsedMos += elapsedTime.months;
-        } 
-        dateString = dateString + (elapsedYears > 0 ? 
-        ` (${elapsedYears} yrs ${elapsedMos} mos)` : ` (${elapsedMos} mos)`)
+        }
+        dateString =
+            dateString + (elapsedYears > 0 ? ` (${elapsedYears} yrs ${elapsedMos} mos)` : ` (${elapsedMos} mos)`);
         newSectionDOM.querySelector(".expDate").textContent = dateString;
         desktopExpPageContent.appendChild(newSectionDOM);
         return newSectionDOM;
@@ -53,17 +69,17 @@ const expFactory = (isPortrait) => {
     const calculateElapsedTime = (startMonthStr, startYear, endMonthStr, endYear) => {
         const startMonth = monthNames.indexOf(startMonthStr);
         const endMonth = monthNames.indexOf(endMonthStr);
-        
+
         let years = endYear - startYear;
         let months = endMonth - startMonth;
-    
+
         if (months < 0) {
             years--;
             months += 12;
         }
-    
+
         return { years: years, months: months };
-    }
+    };
 
     const writeExpSkillCardToDOM = (companySectionDOM, cardData) => {
         const newCardDOM = expCardTemplateDOM.cloneNode(true);
@@ -90,10 +106,10 @@ const expFactory = (isPortrait) => {
         });
     };
     //------------------------------------------------------------------------
-    
+
     // Init
     //------------------------------------------------------------------------
-    for (const [companyData] of expData) { 
+    for (const [companyData] of expData) {
         const companySectionDOM = writeCompanyInfoDOM(companyData);
         expData.get(companyData).forEach((cardData) => {
             writeExpSkillCardToDOM(companySectionDOM, cardData);
@@ -110,7 +126,7 @@ const expFactory = (isPortrait) => {
     switchOrientation(isPortrait);
     //------------------------------------------------------------------------
 
-    return {switchOrientation};
-}
+    return { switchOrientation };
+};
 
-export {expFactory}
+export { expFactory };
