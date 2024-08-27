@@ -1,4 +1,4 @@
-import { projDatas } from "./projectData";
+import { projDatas } from "./data/projectData";
 
 const projectFactory = (isPortrait) => {
     // Data
@@ -37,8 +37,6 @@ const projectFactory = (isPortrait) => {
         let dateString = "";
         const startDate = projectData.startMonYear;
         let endDate = projectData.endMonYear;
-        console.log(startDate)
-        console.log(endDate)
         if (endDate == "Present") {
             const currentDate = new Date();
             endDate = [monthNames[currentDate.getMonth()], currentDate.getFullYear().toString()];

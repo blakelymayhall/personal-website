@@ -1,4 +1,6 @@
-const portraitHeaderBarFactory = (interfaceLayer, initMenuOptionText = null) => {
+import { portraitMenuOptions, domPortraitMenuOptionsText } from "./data/domData";
+
+const navBarFactory = (interfaceLayer, initMenuOptionText = null) => {
     // Data
     //------------------------------------------------------------------------
     const dropDownContent = document.querySelector("#portraitNavBarMenuDropDown-content");
@@ -78,23 +80,4 @@ const portraitHeaderBarFactory = (interfaceLayer, initMenuOptionText = null) => 
     //------------------------------------------------------------------------
 };
 
-const portraitMenuOptions = {
-    HOME: "portraitHomeLink",
-    EXP: "portraitExperienceLink",
-    EDU: "portraitEduLink",
-    PROJ: "portraitProjectsLink",
-    CURR: "portraitCurrentActivityLink",
-    BLOG: "portraitBlogLink",
-    CONT: "portraitContactLink",
-};
-
-const domPortraitMenuOptionsText = new Map();
-domPortraitMenuOptionsText.set(portraitMenuOptions.HOME, "Home");
-domPortraitMenuOptionsText.set(portraitMenuOptions.EXP, "Experience");
-domPortraitMenuOptionsText.set(portraitMenuOptions.EDU, "Education / Skills");
-domPortraitMenuOptionsText.set(portraitMenuOptions.BLOG, "Blog");
-domPortraitMenuOptionsText.set(portraitMenuOptions.CURR, "Current Activity");
-domPortraitMenuOptionsText.set(portraitMenuOptions.CONT, "Contact");
-domPortraitMenuOptionsText.set(portraitMenuOptions.PROJ, "Projects");
-
-export { portraitHeaderBarFactory, portraitMenuOptions, domPortraitMenuOptionsText };
+export { navBarFactory };

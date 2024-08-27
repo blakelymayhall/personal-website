@@ -916,7 +916,7 @@ ul {
     height: 2100px;
 }
 
-#contactTitleBlock {
+#contactTitleBlock, #contPageContentReceiptTitleBlock {
     min-width: 400px;
     width: fit-content;
     color: rgb(18, 19, 15);
@@ -931,7 +931,7 @@ ul {
     z-index: 1;
 }
 
-#contactTitleBlock.portrait {
+#contactTitleBlock.portrait, #contPageContentReceiptTitleBlock.portrait {
     font-size: 4rem;
     left: 3vw;
 }
