@@ -1,23 +1,26 @@
 import { profilePictureOverlayFactory } from "./profilePictureOverlay";
+import {contentPageIDs} from "./data/domData"
 
-const sideBarFactory = (interfaceLayer, initMenuOptionText = null) => {
+const sideBarFactory = (interfaceLayer, currentPageID) => {
     // Data
     //------------------------------------------------------------------------
-    let profilePictureOverlay = profilePictureOverlayFactory();
+    const sideBarOptionsMap = new Map();
+    sideBarOptionsMap.set(contentPageIDs.HOME, "homeLink");
+    sideBarOptionsMap.set(contentPageIDs.EDU, "eduLink");
+    sideBarOptionsMap.set(contentPageIDs.EXP, "experienceLink");
+    sideBarOptionsMap.set(contentPageIDs.BLOG, "blogLink");
+    sideBarOptionsMap.set(contentPageIDs.CURR, "currentActivityLink");
+    sideBarOptionsMap.set(contentPageIDs.CONT, "contactLink");
+    sideBarOptionsMap.set(contentPageIDs.PROJ, "projectsLink");
+    const profilePictureOverlay = profilePictureOverlayFactory();
     const documentMenuOptions = document.querySelectorAll("#sideBarLinks p");
-    let activeMenuOption = menuOptions.HOME;
-    const getActiveMenuOption = () => {
-        return activeMenuOption;
-    };
     //------------------------------------------------------------------------
 
     // Events
     //------------------------------------------------------------------------
     documentMenuOptions.forEach((documentMenuOption) => {
         documentMenuOption.addEventListener("click", () => {
-            activeMenuOption = documentMenuOption.id;
-            interfaceLayer.pageChanged(activeMenuOption);
-            applyActiveMenuOptionDecor(activeMenuOption);
+            interfaceLayer.pageChanged(documentMenuOption.id);
         });
     });
 
@@ -35,45 +38,12 @@ const sideBarFactory = (interfaceLayer, initMenuOptionText = null) => {
         });
         document.querySelector(`#${menuOption}`).style.cssText = "text-decoration:underline;font-family:'RobotoBold';";
     };
-
-    const getKey = (map, val) => {
-        return [...map].find(([key, value]) => val === value)[0];
-    };
     //------------------------------------------------------------------------
 
     // Init
     //------------------------------------------------------------------------
-    if (initMenuOptionText != null) {
-        activeMenuOption = getKey(domMenuOptionsText,initMenuOptionText);  
-    }
-    applyActiveMenuOptionDecor(activeMenuOption);
-    //------------------------------------------------------------------------
-
-    // Export Functions
-    //------------------------------------------------------------------------
-    return {
-        getActiveMenuOption,
-    };
+    applyActiveMenuOptionDecor(sideBarOptionsMap.get(currentPageID));
     //------------------------------------------------------------------------
 };
 
-const menuOptions = {
-    HOME: "homeLink",
-    EDU: "eduLink",
-    EXP: "experienceLink",
-    PROJ: "projectsLink",
-    CURR: "currentActivityLink",
-    BLOG: "blogLink",
-    CONT: "contactLink",
-};
-
-const domMenuOptionsText = new Map();
-domMenuOptionsText.set(menuOptions.HOME, "Home");
-domMenuOptionsText.set(menuOptions.EDU, "Education / Skills");
-domMenuOptionsText.set(menuOptions.EXP, "Experience");
-domMenuOptionsText.set(menuOptions.BLOG, "Blog");
-domMenuOptionsText.set(menuOptions.CURR, "Current Activity");
-domMenuOptionsText.set(menuOptions.CONT, "Contact");
-domMenuOptionsText.set(menuOptions.PROJ, "Projects");
-
-export { sideBarFactory, menuOptions, domMenuOptionsText };
+export { sideBarFactory };

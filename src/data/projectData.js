@@ -1,4 +1,4 @@
-import wustlImage from "./assets/washu.png"
+import wustlImage from "../assets/washu.png"
 
 function ProjCard(
     projectTitle,

@@ -1,4 +1,4 @@
-import { expData } from "./expCardData";
+import { expData } from "./data/expCardData";
 
 const expFactory = (isPortrait) => {
     // Data

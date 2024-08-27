@@ -1,4 +1,4 @@
-import { projDatas } from "./projectData";
+import { projDatas } from "./data/projectData";
 
 const projectFactory = (isPortrait) => {
     // Data

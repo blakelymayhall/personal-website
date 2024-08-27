@@ -459,7 +459,6 @@ ul {
 
 #eduPageContent {
     height: 100%;
-    display: none;
 }
 
 #desktopEduPageContent.portrait {
@@ -721,7 +720,6 @@ ul {
 /* #region Desktop Exp */
 #expPageContent {
     height: 100%;
-    display: none;
 }
 
 #desktopExpPageContent {
@@ -907,7 +905,6 @@ ul {
 #contPageContent {
     width: 100%;
     height: 100%;
-    display: none;
     overflow-y: scroll;
 }
 
@@ -1015,7 +1012,6 @@ ul {
 
 #projPageContent {
     height: 100%;
-    display: none;
 }
 
 #desktopProjPageContent {
