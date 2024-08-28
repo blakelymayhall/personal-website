@@ -1,5 +1,5 @@
 import "./styles.css";
-import { domPages, domPagesIDs, domMenuOptionsText, factoryMap, menuOptions } from "./data/domData";
+import { domPages, domPagesIDs, factoryMap, menuOptions } from "./data/domData";
 import { initPageLoad } from "./initPageLoad";
 import { sideBarFactory } from "./sideBar";
 import { navBarFactory } from "./navBar";
@@ -8,12 +8,14 @@ import { headerBarFactory } from "./headerBar";
 // Data
 //------------------------------------------------------------------------
 let isPortrait = window.screen.availWidth < window.screen.availHeight && window.screen.availWidth < 1200;
-let currentPageObject = null;
 //------------------------------------------------------------------------
 
 // Support
 //------------------------------------------------------------------------
 const pageSwitcher = (menuOption) => {
+    headerBar.updateHeaderTitle(menuOption);
+    navBar.updateDropDownTitle(menuOption);
+    sideBar.applyActiveMenuOptionDecor(menuOption);
     domPages.forEach((domPage) => {
         domPage.style.cssText = "display:none;";
     });
@@ -33,9 +35,6 @@ const orientationChange = () => {
 //------------------------------------------------------------------------
 const interfaceLayer = () => {
     const pageChanged = (menuOption) => {
-        headerBar.updateHeaderTitle(menuOption);
-        navBar.updateDropDownTitle(menuOption);
-        sideBar.applyActiveMenuOptionDecor(menuOption);
         pageSwitcher(menuOption);
     };
 
@@ -51,7 +50,7 @@ initPageLoad(isPortrait);
 const sideBar = sideBarFactory(interfaceLayer());
 const navBar = navBarFactory(interfaceLayer());
 const headerBar = headerBarFactory(interfaceLayer());
-currentPageObject = factoryMap.get(menuOptions.HOME)(isPortrait);
+let currentPageObject = factoryMap.get(menuOptions.HOME)(isPortrait);
 //------------------------------------------------------------------------
 
 // Events

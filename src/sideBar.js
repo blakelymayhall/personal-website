@@ -41,7 +41,8 @@ const sideBarFactory = (interfaceLayer) => {
     const removePortrait = (menuOption) => {
         const portraitIndex = menuOption.indexOf("portrait");
         if (portraitIndex !== -1) {
-            let newMenuOption = menuOption.slice(0, portraitIndex) + menuOption.slice(portraitIndex + "portrait".length);
+            let newMenuOption =
+                menuOption.slice(0, portraitIndex) + menuOption.slice(portraitIndex + "portrait".length);
             if (portraitIndex < newMenuOption.length) {
                 newMenuOption =
                     newMenuOption.slice(0, portraitIndex) +

@@ -1,5 +1,5 @@
 import { projDatas } from "./data/projectData";
-import { monthNames, calculateElapsedTime } from "./support/elapsed_time"
+import { monthNames, calculateElapsedTime } from "./support/elapsed_time";
 
 const projectFactory = (isPortrait) => {
     // Data
@@ -20,7 +20,7 @@ const projectFactory = (isPortrait) => {
         newSectionDOM.querySelector(".projTitle").textContent = projectData.projectTitle;
         newSectionDOM.querySelector(".projShortDesc").textContent = projectData.projectShortDesc;
         newSectionDOM.querySelector(".projDesc").src = projectData.projectDesc;
-        
+
         let dateString = "";
         const startDate = projectData.startMonYear;
         let endDate = projectData.endMonYear;
@@ -40,7 +40,7 @@ const projectFactory = (isPortrait) => {
             const link_li = document.createElement("li");
             const link_a = document.createElement("a");
             link_a.href = link;
-            link_a.textContent=link;
+            link_a.textContent = link;
             link_li.appendChild(link_a);
             projLinksUL.appendChild(link_li);
         });
@@ -61,9 +61,6 @@ const projectFactory = (isPortrait) => {
     };
 
     const switchOrientation = (isPortrait) => {
-        isPortrait
-            ? document.querySelector("#projPageContent").classList.add("portrait")
-            : document.querySelector("#projPageContent").classList.remove("portrait");
         const descendants = document.querySelector("#projPageContent").querySelectorAll("*");
         descendants.forEach((descendant) => {
             if (isPortrait) {
