@@ -1,6 +1,6 @@
 import homePicture from "./assets/IMG_1815.jpeg";
 
-const homeFactory = (isPortrait) => {
+const homeFactory = () => {
     // Support
     //------------------------------------------------------------------------
     const switchOrientation = (isPortrait) => {
@@ -18,9 +18,6 @@ const homeFactory = (isPortrait) => {
     // Init
     //------------------------------------------------------------------------
     document.querySelector("#homePicture").src = homePicture;
-
-    // Style Update for Portrait Mode
-    switchOrientation(isPortrait);
     //------------------------------------------------------------------------
 
     return { switchOrientation };

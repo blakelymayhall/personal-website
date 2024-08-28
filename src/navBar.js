@@ -1,3 +1,4 @@
+import profilePicture from "./assets/IMG_5527.jpeg";
 import { menuOptions, portraitMenuOptions } from "./data/domData";
 
 const navBarFactory = (interfaceLayer) => {
@@ -43,6 +44,16 @@ const navBarFactory = (interfaceLayer) => {
             });
         }
     };
+
+    const switchOrientation = (isPortrait) => {
+        if (isPortrait) {
+            document.querySelector("#portraitHeaderBar").style.display = "grid";
+            document.querySelector("#portraitNavBar").style.display = "flex";
+        } else {
+            document.querySelector("#portraitHeaderBar").style.display = "none";
+            document.querySelector("#portraitNavBar").style.display = "none";
+        }
+    };
     //------------------------------------------------------------------------
 
     // Events
@@ -67,6 +78,7 @@ const navBarFactory = (interfaceLayer) => {
 
     // Init
     //------------------------------------------------------------------------
+    document.querySelector("#portraitProfPic").src = profilePicture;
     generateDropdownOptions();
     //------------------------------------------------------------------------
 
@@ -75,6 +87,7 @@ const navBarFactory = (interfaceLayer) => {
     return {
         getActiveMenuOption,
         updateDropDownTitle,
+        switchOrientation,
     };
     //------------------------------------------------------------------------
 };

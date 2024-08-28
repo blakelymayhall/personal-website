@@ -1,7 +1,7 @@
 import { projDatas } from "./data/projectData";
 import { monthNames, calculateElapsedTime } from "./support/elapsed_time";
 
-const projectFactory = (isPortrait) => {
+const projectFactory = () => {
     // Data
     //------------------------------------------------------------------------
     const templateProjSection = document.querySelector(".projSection");
@@ -81,9 +81,6 @@ const projectFactory = (isPortrait) => {
     document.querySelector(".expSectionBreak:last-of-type").remove();
     desktopProjPageContent.appendChild(sectionEndBuffer);
     templateProjSection.parentElement.removeChild(templateProjSection);
-
-    // Style Update for Portrait Mode
-    switchOrientation(isPortrait);
     //------------------------------------------------------------------------
 
     return { switchOrientation };

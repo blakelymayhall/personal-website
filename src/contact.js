@@ -1,10 +1,10 @@
-const contactFactory = (isPortrait) => {
+const contactFactory = () => {
     // Events
     //------------------------------------------------------------------------
     document.querySelector("#contactForm").onsubmit = (e) => {
         alert(
-            "Please verify you are human on the following page to send message.\n\n" + 
-            "Page will refresh after successful message send"
+            "Please verify you are human on the following page to send message.\n\n" +
+                "Page will refresh after successful message send"
         );
     };
     //------------------------------------------------------------------------
@@ -28,8 +28,6 @@ const contactFactory = (isPortrait) => {
 
     // Init
     //------------------------------------------------------------------------
-    // Style Update for Portrait Mode
-    switchOrientation(isPortrait);
     //------------------------------------------------------------------------
 
     return { switchOrientation };

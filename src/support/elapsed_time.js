@@ -28,4 +28,4 @@ const calculateElapsedTime = (startMonthStr, startYear, endMonthStr, endYear) =>
     return { years: years, months: months };
 };
 
-export {monthNames, calculateElapsedTime}
+export { monthNames, calculateElapsedTime };

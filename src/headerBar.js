@@ -9,6 +9,12 @@ const headerBarFactory = () => {
     const updateHeaderTitle = (activeMenuOption) => {
         domHeaderBarTitle.textContent = document.querySelector(`#${activeMenuOption}`).textContent;
     };
+
+    const switchOrientation = (isPortrait) => {
+        isPortrait
+            ? (document.querySelector("#headerBar").style.display = "none")
+            : (document.querySelector("#headerBar").style.display = "flex");
+    };
     //------------------------------------------------------------------------
 
     // Events
@@ -21,6 +27,7 @@ const headerBarFactory = () => {
 
     return {
         updateHeaderTitle,
+        switchOrientation,
     };
 };
 

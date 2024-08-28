@@ -1,7 +1,7 @@
 import { expData } from "./data/expCardData";
-import { monthNames, calculateElapsedTime } from "./support/elapsed_time"
+import { monthNames, calculateElapsedTime } from "./support/elapsed_time";
 
-const expFactory = (isPortrait) => {
+const expFactory = () => {
     // Data
     //------------------------------------------------------------------------
     const templateExpSection = document.querySelector(".expSection");
@@ -93,9 +93,6 @@ const expFactory = (isPortrait) => {
     document.querySelector(".expSectionBreak:last-of-type").remove();
     desktopExpPageContent.appendChild(sectionEndBuffer);
     templateExpSection.parentElement.removeChild(templateExpSection);
-
-    // Style Update for Portrait Mode
-    switchOrientation(isPortrait);
     //------------------------------------------------------------------------
 
     return { switchOrientation };

@@ -1,6 +1,5 @@
 import "./styles.css";
-import { domPages, domPagesIDs, factoryMap, menuOptions } from "./data/domData";
-import { initPageLoad } from "./initPageLoad";
+import { domPages, domPagesIDs } from "./data/domData";
 import { sideBarFactory } from "./sideBar";
 import { navBarFactory } from "./navBar";
 import { headerBarFactory } from "./headerBar";
@@ -25,7 +24,18 @@ const pageSwitcher = (menuOption) => {
 
 const orientationChange = () => {
     isPortrait = checkIsPortrait();
-    initPageLoad(isPortrait);
+    if (isPortrait) {
+        document.querySelector("#mainContainer").style.display = "flex";
+        document.body.classList.add("portrait");
+        document.querySelector("#mainContainer").classList.add("portrait");
+    } else {
+        document.querySelector("#mainContainer").style.display = "grid";
+        document.body.classList.remove("portrait");
+        document.querySelector("#mainContainer").classList.remove("portrait");
+    }
+    sideBar.switchOrientation(isPortrait);
+    headerBar.switchOrientation(isPortrait);
+    navBar.switchOrientation(isPortrait);
     homePage.switchOrientation(isPortrait);
     contPage.switchOrientation(isPortrait);
     expPage.switchOrientation(isPortrait);
@@ -53,16 +63,17 @@ const interfaceLayer = () => {
 
 // Init
 //------------------------------------------------------------------------
-let isPortrait = checkIsPortrait();
-initPageLoad(isPortrait);
 const sideBar = sideBarFactory(interfaceLayer());
 const navBar = navBarFactory(interfaceLayer());
 const headerBar = headerBarFactory(interfaceLayer());
-const homePage = homeFactory(isPortrait);
-const eduPage = eduSkillsFactory(isPortrait);
-const expPage = expFactory(isPortrait);
-const contPage = contactFactory(isPortrait);
-const projPage = projectFactory(isPortrait);
+const homePage = homeFactory();
+const eduPage = eduSkillsFactory();
+const expPage = expFactory();
+const contPage = contactFactory();
+const projPage = projectFactory();
+
+let isPortrait = checkIsPortrait();
+orientationChange();
 //------------------------------------------------------------------------
 
 // Events
