@@ -1,4 +1,5 @@
 import { projDatas } from "./data/projectData";
+import { monthNames, calculateElapsedTime } from "./support/elapsed_time"
 
 const projectFactory = (isPortrait) => {
     // Data
@@ -9,20 +10,6 @@ const projectFactory = (isPortrait) => {
     sectionBreak.classList.add("expSectionBreak");
     const sectionEndBuffer = document.createElement("div");
     sectionEndBuffer.classList.add("expSectionBuffer");
-    const monthNames = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-    ];
     //------------------------------------------------------------------------
 
     // Support
@@ -71,21 +58,6 @@ const projectFactory = (isPortrait) => {
             projSkills.appendChild(newItem);
         });
         desktopProjPageContent.appendChild(newSectionDOM);
-    };
-
-    const calculateElapsedTime = (startMonthStr, startYear, endMonthStr, endYear) => {
-        const startMonth = monthNames.indexOf(startMonthStr);
-        const endMonth = monthNames.indexOf(endMonthStr);
-
-        let years = endYear - startYear;
-        let months = endMonth - startMonth;
-
-        if (months < 0) {
-            years--;
-            months += 12;
-        }
-
-        return { years: years, months: months };
     };
 
     const switchOrientation = (isPortrait) => {

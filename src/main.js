@@ -1,18 +1,14 @@
 import "./styles.css";
-import { domPages, domPagesIDs, domMenuOptionsText, domPortraitMenuOptionsText } from "./data/domData";
+import { domPages, domPagesIDs, domMenuOptionsText, factoryMap, menuOptions } from "./data/domData";
 import { initPageLoad } from "./initPageLoad";
 import { sideBarFactory } from "./sideBar";
 import { navBarFactory } from "./navBar";
 import { headerBarFactory } from "./headerBar";
-import { homeFactory } from "./home";
-import { eduSkillsFactory } from "./educationSkills";
-import { expFactory } from "./experience";
-import { contactFactory } from "./contact";
-import { projectFactory } from "./project";
 
 // Data
 //------------------------------------------------------------------------
 let isPortrait = window.screen.availWidth < window.screen.availHeight && window.screen.availWidth < 1200;
+let currentPageObject = null;
 //------------------------------------------------------------------------
 
 // Support
@@ -21,6 +17,7 @@ const pageSwitcher = (menuOption) => {
     domPages.forEach((domPage) => {
         domPage.style.cssText = "display:none;";
     });
+    currentPageObject = factoryMap.get(menuOption)(isPortrait);
     const domPageID = domPagesIDs.get(menuOption);
     document.querySelector(`#${domPageID}`).style.cssText = "display:block;";
 };
@@ -28,17 +25,7 @@ const pageSwitcher = (menuOption) => {
 const orientationChange = () => {
     isPortrait = document.body.clientWidth < document.body.clientHeight && window.screen.availWidth < 1200;
     initPageLoad(isPortrait);
-    const domMenuOptions = isPortrait ? domMenuOptionsText : domPortraitMenuOptionsText;
-    const activeMenuOptionText = domMenuOptions.get(menuOptionController.getActiveMenuOption());
-    menuOptionController = isPortrait
-        ? navBarFactory(interfaceLayer(), activeMenuOptionText)
-        : sideBarFactory(interfaceLayer(), activeMenuOptionText);
-    headerBar = isPortrait ? null : headerBarFactory(interfaceLayer(), activeMenuOptionText);
-    homePage.switchOrientation(isPortrait);
-    eduSkillsPage.switchOrientation(isPortrait);
-    expPage.switchOrientation(isPortrait);
-    contactPage.switchOrientation(isPortrait);
-    projPage.switchOrientation(isPortrait);
+    currentPageObject.switchOrientation(isPortrait);
 };
 //------------------------------------------------------------------------
 
@@ -46,9 +33,9 @@ const orientationChange = () => {
 //------------------------------------------------------------------------
 const interfaceLayer = () => {
     const pageChanged = (menuOption) => {
-        if (!isPortrait) {
-            headerBar.updateHeaderTitle(domMenuOptionsText.get(menuOption));
-        }
+        headerBar.updateHeaderTitle(menuOption);
+        navBar.updateDropDownTitle(menuOption);
+        sideBar.applyActiveMenuOptionDecor(menuOption);
         pageSwitcher(menuOption);
     };
 
@@ -61,19 +48,16 @@ const interfaceLayer = () => {
 // Init
 //------------------------------------------------------------------------
 initPageLoad(isPortrait);
-let menuOptionController = isPortrait ? navBarFactory(interfaceLayer()) : sideBarFactory(interfaceLayer());
-let headerBar = isPortrait ? null : headerBarFactory(interfaceLayer());
-let homePage = homeFactory(isPortrait);
-let eduSkillsPage = eduSkillsFactory(isPortrait);
-let expPage = expFactory(isPortrait);
-let contactPage = contactFactory(isPortrait);
-let projPage = projectFactory(isPortrait);
+const sideBar = sideBarFactory(interfaceLayer());
+const navBar = navBarFactory(interfaceLayer());
+const headerBar = headerBarFactory(interfaceLayer());
+currentPageObject = factoryMap.get(menuOptions.HOME)(isPortrait);
 //------------------------------------------------------------------------
 
 // Events
 //------------------------------------------------------------------------
-let portrait = window.matchMedia("(orientation: portrait)");
-portrait.addEventListener("change", () => {
+const orientation = window.matchMedia("(orientation: portrait)");
+orientation.addEventListener("change", () => {
     orientationChange();
 });
 //------------------------------------------------------------------------

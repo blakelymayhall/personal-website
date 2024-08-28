@@ -1,3 +1,9 @@
+import { homeFactory } from "../home";
+import { eduSkillsFactory } from "../educationSkills";
+import { expFactory } from "../experience";
+import { contactFactory } from "../contact";
+import { projectFactory } from "../project";
+
 const menuOptions = {
     HOME: "homeLink",
     EDU: "eduLink",
@@ -7,15 +13,6 @@ const menuOptions = {
     BLOG: "blogLink",
     CONT: "contactLink",
 };
-
-const domMenuOptionsText = new Map();
-domMenuOptionsText.set(menuOptions.HOME, "Home");
-domMenuOptionsText.set(menuOptions.EDU, "Education / Skills");
-domMenuOptionsText.set(menuOptions.EXP, "Experience");
-domMenuOptionsText.set(menuOptions.BLOG, "Blog");
-domMenuOptionsText.set(menuOptions.CURR, "Current Activity");
-domMenuOptionsText.set(menuOptions.CONT, "Contact");
-domMenuOptionsText.set(menuOptions.PROJ, "Projects");
 
 const portraitMenuOptions = {
     HOME: "portraitHomeLink",
@@ -27,14 +24,21 @@ const portraitMenuOptions = {
     CONT: "portraitContactLink",
 };
 
-const domPortraitMenuOptionsText = new Map();
-domPortraitMenuOptionsText.set(portraitMenuOptions.HOME, "Home");
-domPortraitMenuOptionsText.set(portraitMenuOptions.EXP, "Experience");
-domPortraitMenuOptionsText.set(portraitMenuOptions.EDU, "Education / Skills");
-domPortraitMenuOptionsText.set(portraitMenuOptions.BLOG, "Blog");
-domPortraitMenuOptionsText.set(portraitMenuOptions.CURR, "Current Activity");
-domPortraitMenuOptionsText.set(portraitMenuOptions.CONT, "Contact");
-domPortraitMenuOptionsText.set(portraitMenuOptions.PROJ, "Projects");
+const factoryMap = new Map();
+factoryMap.set(menuOptions.HOME, homeFactory);
+factoryMap.set(menuOptions.EDU, eduSkillsFactory);
+factoryMap.set(menuOptions.EXP, expFactory);
+factoryMap.set(menuOptions.BLOG, "");
+factoryMap.set(menuOptions.CURR, "");
+factoryMap.set(menuOptions.CONT, contactFactory);
+factoryMap.set(menuOptions.PROJ, projectFactory);
+factoryMap.set(portraitMenuOptions.HOME, homeFactory);
+factoryMap.set(portraitMenuOptions.EXP, expFactory);
+factoryMap.set(portraitMenuOptions.EDU, eduSkillsFactory);
+factoryMap.set(portraitMenuOptions.BLOG, "");
+factoryMap.set(portraitMenuOptions.CURR, "");
+factoryMap.set(portraitMenuOptions.CONT, contactFactory);
+factoryMap.set(portraitMenuOptions.PROJ, projectFactory);
 
 const domPagesIDs = new Map();
 domPagesIDs.set(menuOptions.HOME, "homePageContent");
@@ -54,4 +58,4 @@ domPagesIDs.set(portraitMenuOptions.PROJ, "projPageContent");
 
 const domPages = document.querySelectorAll(".contentPage");
 
-export { domPagesIDs, domPages, menuOptions, domMenuOptionsText, portraitMenuOptions, domPortraitMenuOptionsText };
+export { domPagesIDs, domPages, menuOptions, portraitMenuOptions, factoryMap };
