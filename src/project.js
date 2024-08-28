@@ -1,9 +1,11 @@
 import { projDatas } from "./data/projectData";
-import { monthNames, calculateElapsedTime } from "./support/elapsed_time";
+import { monthNames, calculateElapsedTime } from "./support/elapsedTime";
+import { pictureOverlayFactory } from "./support/pictureOverlay";
 
 const projectFactory = () => {
     // Data
     //------------------------------------------------------------------------
+    const screenshotOverlay = pictureOverlayFactory();
     const templateProjSection = document.querySelector(".projSection");
     const desktopProjPageContent = document.querySelector("#desktopProjPageContent");
     const sectionBreak = document.createElement("div");
@@ -20,7 +22,6 @@ const projectFactory = () => {
         newSectionDOM.querySelector(".projTitle").textContent = projectData.projectTitle;
         newSectionDOM.querySelector(".projShortDesc").textContent = projectData.projectShortDesc;
         newSectionDOM.querySelector(".projDesc").src = projectData.projectDesc;
-
         let dateString = "";
         const startDate = projectData.startMonYear;
         let endDate = projectData.endMonYear;
@@ -49,6 +50,9 @@ const projectFactory = () => {
             const imgDOM = document.createElement("img");
             imgDOM.src = screenshot;
             imgDOM.classList.add("projScreenShot");
+            imgDOM.addEventListener("click", () => {
+                screenshotOverlay.activate(imgDOM, true);
+            });
             projScreenShots.appendChild(imgDOM);
         });
         const projSkills = newSectionDOM.querySelector(".projSkills");

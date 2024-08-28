@@ -1,5 +1,5 @@
 import { expData } from "./data/expCardData";
-import { monthNames, calculateElapsedTime } from "./support/elapsed_time";
+import { monthNames, calculateElapsedTime } from "./support/elapsedTime";
 
 const expFactory = () => {
     // Data
