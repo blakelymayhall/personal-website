@@ -1,8 +1,7 @@
 import { eduCards } from "./data/educationCardData";
 import { skillCards } from "./data/skillCardData";
 
-const eduSkillsFactory = (isPortrait) => {
-
+const eduSkillsFactory = () => {
     // Data
     //------------------------------------------------------------------------
     const templateEduCardDOM = document.querySelector(".eduCard");
@@ -72,23 +71,20 @@ const eduSkillsFactory = (isPortrait) => {
     //------------------------------------------------------------------------
     // Education Cards
     eduCards.forEach((cardData) => {
-        writeEduCardDOM(cardData); 
+        writeEduCardDOM(cardData);
     });
     templateEduCardDOM.parentElement.removeChild(templateEduCardDOM);
 
     // Skill Cards
     skillCards.forEach((cardData) => {
-        writeSkillCardDOM(cardData); 
+        writeSkillCardDOM(cardData);
     });
     templateSkillCardDOM.parentElement.removeChild(templateSkillCardDOM);
-
-    // Style Update for Portrait Mode
-    switchOrientation(isPortrait);
     //------------------------------------------------------------------------
 
     return {
         switchOrientation,
-    }
+    };
 };
 
 export { eduSkillsFactory };

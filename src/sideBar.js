@@ -1,3 +1,6 @@
+import profilePicture from "./assets/IMG_5527.jpeg";
+import linkedInPicture from "./assets/linkedin.png";
+import githubPicture from "./assets/github-sign.png";
 import { profilePictureOverlayFactory } from "./profilePictureOverlay";
 import { menuOptions } from "./data/domData";
 
@@ -29,6 +32,19 @@ const sideBarFactory = (interfaceLayer) => {
 
     // Support
     //------------------------------------------------------------------------
+    const initSideBarDOM = () => {
+        document.querySelector("#profPic").src = profilePicture;
+        const linkedInButtons = document.querySelectorAll(".linkedInImg");
+        linkedInButtons.forEach((linkedInButton) => {
+            linkedInButton.src = linkedInPicture;
+        });
+        document.querySelectorAll(".githubImg").src = githubPicture;
+        const githubButtons = document.querySelectorAll(".githubImg");
+        githubButtons.forEach((githubButton) => {
+            githubButton.src = githubPicture;
+        });
+    };
+
     const applyActiveMenuOptionDecor = (activeMenuOption) => {
         documentMenuOptions.forEach((documentMenuOption) => {
             documentMenuOption.style.cssText = "text-decoration:none;";
@@ -54,10 +70,17 @@ const sideBarFactory = (interfaceLayer) => {
             return menuOption;
         }
     };
+
+    const switchOrientation = (isPortrait) => {
+        isPortrait
+            ? (document.querySelector("#sideBar").style.display = "none")
+            : (document.querySelector("#sideBar").style.display = "flex");
+    };
     //------------------------------------------------------------------------
 
     // Init
     //------------------------------------------------------------------------
+    initSideBarDOM();
     applyActiveMenuOptionDecor(activeMenuOption);
     //------------------------------------------------------------------------
 
@@ -66,6 +89,7 @@ const sideBarFactory = (interfaceLayer) => {
     return {
         getActiveMenuOption,
         applyActiveMenuOptionDecor,
+        switchOrientation,
     };
     //------------------------------------------------------------------------
 };

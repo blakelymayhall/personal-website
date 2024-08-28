@@ -1,4 +1,4 @@
-import wustlImage from "../assets/washu.png"
+import wustlImage from "../assets/washu.png";
 
 function ProjCard(
     projectTitle,
@@ -31,7 +31,17 @@ const testProj1 = new ProjCard(
     "Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc",
     ["Link1", "Link2"],
     [wustlImage, wustlImage, wustlImage],
-    ["Object Oriented Programming", "Git", "Long Skill With Many Spaces in the Name", "Poop opp ooppp pooo", "Skill5", "Skill6", "Skill 19 00 9 12n j kjaskdf h ka fsk","afs"]);
+    [
+        "Object Oriented Programming",
+        "Git",
+        "Long Skill With Many Spaces in the Name",
+        "Poop opp ooppp pooo",
+        "Skill5",
+        "Skill6",
+        "Skill 19 00 9 12n j kjaskdf h ka fsk",
+        "afs",
+    ]
+);
 const testProj2 = new ProjCard(
     "Project Test Title 2",
     "Project Test Short Desc 2",
@@ -40,8 +50,9 @@ const testProj2 = new ProjCard(
     "Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc",
     ["Link1", "Link2"],
     [wustlImage, wustlImage, wustlImage],
-    ["Skill1", "Skill2", "Skill3", "Skill4", "Skill5", "Skill6"]);
+    ["Skill1", "Skill2", "Skill3", "Skill4", "Skill5", "Skill6"]
+);
 projDatas.push(testProj1);
 projDatas.push(testProj2);
 
-export {projDatas}
+export { projDatas };
