@@ -1,13 +1,13 @@
 import profilePicture from "./assets/IMG_5527.jpeg";
 import linkedInPicture from "./assets/linkedin.png";
 import githubPicture from "./assets/github-sign.png";
-import { profilePictureOverlayFactory } from "./profilePictureOverlay";
+import { pictureOverlayFactory } from "./support/pictureOverlay";
 import { menuOptions } from "./data/domData";
 
 const sideBarFactory = (interfaceLayer) => {
     // Data
     //------------------------------------------------------------------------
-    let profilePictureOverlay = profilePictureOverlayFactory();
+    let profilePictureOverlay = pictureOverlayFactory();
     const documentMenuOptions = document.querySelectorAll("#sideBarLinks p");
     let activeMenuOption = menuOptions.HOME;
     const getActiveMenuOption = () => {
@@ -26,7 +26,7 @@ const sideBarFactory = (interfaceLayer) => {
 
     const profPicture = document.querySelector("#profPic");
     profPicture.addEventListener("click", () => {
-        profilePictureOverlay.activate();
+        profilePictureOverlay.activate(profPicture);
     });
     //------------------------------------------------------------------------
 
