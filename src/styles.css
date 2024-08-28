@@ -1104,6 +1104,10 @@ ul {
     margin-left: 5px;
 }
 
+.projLinks.portrait {
+    margin-left: 1.75rem;
+}
+
 .projLinks ul {
     list-style-type: square;
 }
@@ -1154,10 +1158,10 @@ ul {
     display: grid;
     list-style-type: square;
     grid-template-columns: 200px 200px 200px 200px 200px;
-    grid-template-rows: 4rem;
-    grid-auto-rows: 4rem;
+    grid-template-rows: 5rem;
+    grid-auto-rows: 5rem;
     gap: 2rem;
-    margin-left: -2rem;
+    margin-left: -1.75rem;
 }
 
 .projSkills.portrait {
@@ -1168,6 +1172,7 @@ ul {
     grid-template-rows: 9rem;
     grid-auto-rows: 9rem;
     gap: 5rem;
+    margin-left: -1.75rem;
 }
 
 .projSkills li {
