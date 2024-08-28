@@ -1,4 +1,5 @@
-import { expData } from "./expCardData";
+import { expData } from "./data/expCardData";
+import { monthNames, calculateElapsedTime } from "./support/elapsed_time"
 
 const expFactory = (isPortrait) => {
     // Data
@@ -9,20 +10,6 @@ const expFactory = (isPortrait) => {
     sectionBreak.classList.add("expSectionBreak");
     const sectionEndBuffer = document.createElement("div");
     sectionEndBuffer.classList.add("expSectionBuffer");
-    const monthNames = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-    ];
     const expCardTemplateDOM = document.querySelector(".expCard.template");
     //------------------------------------------------------------------------
 
@@ -64,21 +51,6 @@ const expFactory = (isPortrait) => {
         newSectionDOM.querySelector(".expDate").textContent = dateString;
         desktopExpPageContent.appendChild(newSectionDOM);
         return newSectionDOM;
-    };
-
-    const calculateElapsedTime = (startMonthStr, startYear, endMonthStr, endYear) => {
-        const startMonth = monthNames.indexOf(startMonthStr);
-        const endMonth = monthNames.indexOf(endMonthStr);
-
-        let years = endYear - startYear;
-        let months = endMonth - startMonth;
-
-        if (months < 0) {
-            years--;
-            months += 12;
-        }
-
-        return { years: years, months: months };
     };
 
     const writeExpSkillCardToDOM = (companySectionDOM, cardData) => {

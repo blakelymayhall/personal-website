@@ -1,5 +1,5 @@
-import boeingImg from "./assets/boeing.png"
-import aglImage from "./assets/aglImage.jpg"
+import boeingImg from "../assets/boeing.png"
+import aglImage from "../assets/aglImage.jpg"
 
 function ExpCard(skillName, skillSupport) {
     this.expCardID = Math.floor(Date.now() * Math.random());

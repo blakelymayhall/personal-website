@@ -1,6 +1,7 @@
 import { profilePictureOverlayFactory } from "./profilePictureOverlay";
+import { menuOptions } from "./data/domData";
 
-const sideBarFactory = (interfaceLayer, initMenuOptionText = null) => {
+const sideBarFactory = (interfaceLayer) => {
     // Data
     //------------------------------------------------------------------------
     let profilePictureOverlay = profilePictureOverlayFactory();
@@ -17,7 +18,6 @@ const sideBarFactory = (interfaceLayer, initMenuOptionText = null) => {
         documentMenuOption.addEventListener("click", () => {
             activeMenuOption = documentMenuOption.id;
             interfaceLayer.pageChanged(activeMenuOption);
-            applyActiveMenuOptionDecor(activeMenuOption);
         });
     });
 
@@ -29,23 +29,35 @@ const sideBarFactory = (interfaceLayer, initMenuOptionText = null) => {
 
     // Support
     //------------------------------------------------------------------------
-    const applyActiveMenuOptionDecor = (menuOption) => {
+    const applyActiveMenuOptionDecor = (activeMenuOption) => {
         documentMenuOptions.forEach((documentMenuOption) => {
             documentMenuOption.style.cssText = "text-decoration:none;";
         });
-        document.querySelector(`#${menuOption}`).style.cssText = "text-decoration:underline;font-family:'RobotoBold';";
+        activeMenuOption = removePortrait(activeMenuOption);
+        document.querySelector(`#${activeMenuOption}`).style.cssText =
+            "text-decoration:underline;font-family:'RobotoBold';";
     };
 
-    const getKey = (map, val) => {
-        return [...map].find(([key, value]) => val === value)[0];
+    const removePortrait = (menuOption) => {
+        const portraitIndex = menuOption.indexOf("portrait");
+        if (portraitIndex !== -1) {
+            let newMenuOption =
+                menuOption.slice(0, portraitIndex) + menuOption.slice(portraitIndex + "portrait".length);
+            if (portraitIndex < newMenuOption.length) {
+                newMenuOption =
+                    newMenuOption.slice(0, portraitIndex) +
+                    newMenuOption.charAt(portraitIndex).toLowerCase() +
+                    newMenuOption.slice(portraitIndex + 1);
+            }
+            return newMenuOption;
+        } else {
+            return menuOption;
+        }
     };
     //------------------------------------------------------------------------
 
     // Init
     //------------------------------------------------------------------------
-    if (initMenuOptionText != null) {
-        activeMenuOption = getKey(domMenuOptionsText,initMenuOptionText);  
-    }
     applyActiveMenuOptionDecor(activeMenuOption);
     //------------------------------------------------------------------------
 
@@ -53,27 +65,9 @@ const sideBarFactory = (interfaceLayer, initMenuOptionText = null) => {
     //------------------------------------------------------------------------
     return {
         getActiveMenuOption,
+        applyActiveMenuOptionDecor,
     };
     //------------------------------------------------------------------------
 };
 
-const menuOptions = {
-    HOME: "homeLink",
-    EDU: "eduLink",
-    EXP: "experienceLink",
-    PROJ: "projectsLink",
-    CURR: "currentActivityLink",
-    BLOG: "blogLink",
-    CONT: "contactLink",
-};
-
-const domMenuOptionsText = new Map();
-domMenuOptionsText.set(menuOptions.HOME, "Home");
-domMenuOptionsText.set(menuOptions.EDU, "Education / Skills");
-domMenuOptionsText.set(menuOptions.EXP, "Experience");
-domMenuOptionsText.set(menuOptions.BLOG, "Blog");
-domMenuOptionsText.set(menuOptions.CURR, "Current Activity");
-domMenuOptionsText.set(menuOptions.CONT, "Contact");
-domMenuOptionsText.set(menuOptions.PROJ, "Projects");
-
-export { sideBarFactory, menuOptions, domMenuOptionsText };
+export { sideBarFactory };

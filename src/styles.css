@@ -337,6 +337,18 @@ ul {
     height: 100%;
 }
 
+#desktopHomePageContent.portrait {
+    background-color: rgb(234, 230, 229);
+    width: 101vw;
+    height: 150%;
+    position: relative;
+    background-image: url("./assets/background.png");
+    background-position: 0px;
+    background-repeat: repeat;
+    background-size: 30vh 30vh;
+    overflow-y: scroll;
+}
+
 #homePicture {
     height: max(40vw, 60vh);
     aspect-ratio: 1/1;
@@ -344,6 +356,15 @@ ul {
     top: 15vh;
     left: max(55vw, 520px);
     border-radius: 15px;
+}
+
+#homePicture.portrait {
+    border-radius: 0;
+    margin-top: 5rem;
+    width: 101vw;
+    height: 101vw;
+    left: 0;
+    top: 0;
 }
 
 #homeTitleBlock {
@@ -360,10 +381,28 @@ ul {
     gap: 1rem;
 }
 
+#homeTitleBlock.portrait {
+    width: fit-content;
+    color: rgb(18, 19, 15);
+    font-family: 'Roboto';
+    position: absolute;
+    top: 5vh;
+    left: 3vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    gap: 1rem;
+}
+
 #homeTitleBlock p {
     padding-left: 1.4rem;
     padding-right: 1.4rem;
     background-color: rgb(143, 203, 155);
+}
+
+#portraitHomeTitleBlock p.portrait {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
 }
 
 #homeTextBlock {
@@ -383,58 +422,7 @@ ul {
     font-size: larger;
 }
 
-@media (max-width: 1100px) {
-    #homeTitleBlock {
-        font-size: 1.4rem;
-    }
-
-    #homeTextBlock {
-        font-size: medium;
-    }
-}
-/* #endregion */
-
-/* #region Portrait Home */
-#portraitHomePageContent{
-    background-color: rgb(234, 230, 229);
-    display: none;
-    width: 101vw;
-    height: 150%;
-    position: relative;
-    background-image: url("./assets/background.png");
-    background-position: 0px;
-    background-repeat: repeat;
-    background-size: 30vh 30vh;
-    overflow-y: scroll;
-}
-
-#portraitHomePicture {
-    position: absolute;
-    margin-top: 5rem;
-    width: 101vw;
-    aspect-ratio: 1/1;
-}
-
-#portraitHomeTitleBlock {
-    width: fit-content;
-    color: rgb(18, 19, 15);
-    font-family: 'Roboto';
-    position: absolute;
-    top: 5vh;
-    left: 3vw;
-    display: flex;
-    flex-direction: column;
-    font-size: 3rem;
-    gap: 1rem;
-}
-
-#portraitHomeTitleBlock p {
-    padding-left: 1.4rem;
-    padding-right: 1.4rem;
-    background-color: rgb(143, 203, 155);
-}
-
-#portraitHomeTextBlock {
+#homeTextBlock.portrait {
     background-color: whitesmoke;
     font-family: 'Roboto';
     position: absolute;
@@ -453,6 +441,15 @@ ul {
     font-size: 3rem;
 }
 
+@media (max-width: 1100px) {
+    #homeTitleBlock {
+        font-size: 1.4rem;
+    }
+
+    #homeTextBlock {
+        font-size: medium;
+    }
+}
 /* #endregion */
 
 /* #region Desktop Edu */
@@ -916,7 +913,7 @@ ul {
     height: 2100px;
 }
 
-#contactTitleBlock {
+#contactTitleBlock, #contPageContentReceiptTitleBlock {
     min-width: 400px;
     width: fit-content;
     color: rgb(18, 19, 15);
@@ -931,7 +928,7 @@ ul {
     z-index: 1;
 }
 
-#contactTitleBlock.portrait {
+#contactTitleBlock.portrait, #contPageContentReceiptTitleBlock.portrait {
     font-size: 4rem;
     left: 3vw;
 }

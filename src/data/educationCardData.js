@@ -1,5 +1,5 @@
-import wustlImage from "./assets/washu.png"
-import mstImage from "./assets/mstImage.png"
+import wustlImage from "../assets/washu.png"
+import mstImage from "../assets/mstImage.png"
 
 function EducationCard(schoolTitle, degreeTitle, honorsTitle, description, notableCourses, schoolImage) {
     this.eduCardID = Math.floor(Date.now() * Math.random());

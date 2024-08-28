@@ -1,4 +1,5 @@
-import { projDatas } from "./projectData";
+import { projDatas } from "./data/projectData";
+import { monthNames, calculateElapsedTime } from "./support/elapsed_time";
 
 const projectFactory = (isPortrait) => {
     // Data
@@ -9,20 +10,6 @@ const projectFactory = (isPortrait) => {
     sectionBreak.classList.add("expSectionBreak");
     const sectionEndBuffer = document.createElement("div");
     sectionEndBuffer.classList.add("expSectionBuffer");
-    const monthNames = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-    ];
     //------------------------------------------------------------------------
 
     // Support
@@ -33,12 +20,10 @@ const projectFactory = (isPortrait) => {
         newSectionDOM.querySelector(".projTitle").textContent = projectData.projectTitle;
         newSectionDOM.querySelector(".projShortDesc").textContent = projectData.projectShortDesc;
         newSectionDOM.querySelector(".projDesc").src = projectData.projectDesc;
-        
+
         let dateString = "";
         const startDate = projectData.startMonYear;
         let endDate = projectData.endMonYear;
-        console.log(startDate)
-        console.log(endDate)
         if (endDate == "Present") {
             const currentDate = new Date();
             endDate = [monthNames[currentDate.getMonth()], currentDate.getFullYear().toString()];
@@ -55,7 +40,7 @@ const projectFactory = (isPortrait) => {
             const link_li = document.createElement("li");
             const link_a = document.createElement("a");
             link_a.href = link;
-            link_a.textContent=link;
+            link_a.textContent = link;
             link_li.appendChild(link_a);
             projLinksUL.appendChild(link_li);
         });
@@ -75,25 +60,7 @@ const projectFactory = (isPortrait) => {
         desktopProjPageContent.appendChild(newSectionDOM);
     };
 
-    const calculateElapsedTime = (startMonthStr, startYear, endMonthStr, endYear) => {
-        const startMonth = monthNames.indexOf(startMonthStr);
-        const endMonth = monthNames.indexOf(endMonthStr);
-
-        let years = endYear - startYear;
-        let months = endMonth - startMonth;
-
-        if (months < 0) {
-            years--;
-            months += 12;
-        }
-
-        return { years: years, months: months };
-    };
-
     const switchOrientation = (isPortrait) => {
-        isPortrait
-            ? document.querySelector("#projPageContent").classList.add("portrait")
-            : document.querySelector("#projPageContent").classList.remove("portrait");
         const descendants = document.querySelector("#projPageContent").querySelectorAll("*");
         descendants.forEach((descendant) => {
             if (isPortrait) {

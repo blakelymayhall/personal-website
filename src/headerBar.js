@@ -1,4 +1,4 @@
-const headerBarFactory = (interfaceLayer, initMenuOptionText = null) => {
+const headerBarFactory = () => {
     // Data
     //------------------------------------------------------------------------
     const domHeaderBarTitle = document.querySelector("#headerBarTitle");
@@ -7,7 +7,7 @@ const headerBarFactory = (interfaceLayer, initMenuOptionText = null) => {
     // Support
     //------------------------------------------------------------------------
     const updateHeaderTitle = (activeMenuOption) => {
-        domHeaderBarTitle.textContent = activeMenuOption;
+        domHeaderBarTitle.textContent = document.querySelector(`#${activeMenuOption}`).textContent;
     };
     //------------------------------------------------------------------------
 
@@ -17,9 +17,6 @@ const headerBarFactory = (interfaceLayer, initMenuOptionText = null) => {
 
     // Init
     //------------------------------------------------------------------------
-    if (initMenuOptionText != null) {
-        updateHeaderTitle(initMenuOptionText);
-    }
     //------------------------------------------------------------------------
 
     return {

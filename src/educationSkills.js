@@ -1,5 +1,5 @@
-import { eduCards } from "./educationCardData";
-import { skillCards } from "./skillCardData";
+import { eduCards } from "./data/educationCardData";
+import { skillCards } from "./data/skillCardData";
 
 const eduSkillsFactory = (isPortrait) => {
 
