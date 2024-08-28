@@ -1,9 +1,3 @@
-import { homeFactory } from "../home";
-import { eduSkillsFactory } from "../educationSkills";
-import { expFactory } from "../experience";
-import { contactFactory } from "../contact";
-import { projectFactory } from "../project";
-
 const menuOptions = {
     HOME: "homeLink",
     EDU: "eduLink",
@@ -24,22 +18,6 @@ const portraitMenuOptions = {
     CONT: "portraitContactLink",
 };
 
-const factoryMap = new Map();
-factoryMap.set(menuOptions.HOME, homeFactory);
-factoryMap.set(menuOptions.EDU, eduSkillsFactory);
-factoryMap.set(menuOptions.EXP, expFactory);
-factoryMap.set(menuOptions.BLOG, "");
-factoryMap.set(menuOptions.CURR, "");
-factoryMap.set(menuOptions.CONT, contactFactory);
-factoryMap.set(menuOptions.PROJ, projectFactory);
-factoryMap.set(portraitMenuOptions.HOME, homeFactory);
-factoryMap.set(portraitMenuOptions.EXP, expFactory);
-factoryMap.set(portraitMenuOptions.EDU, eduSkillsFactory);
-factoryMap.set(portraitMenuOptions.BLOG, "");
-factoryMap.set(portraitMenuOptions.CURR, "");
-factoryMap.set(portraitMenuOptions.CONT, contactFactory);
-factoryMap.set(portraitMenuOptions.PROJ, projectFactory);
-
 const domPagesIDs = new Map();
 domPagesIDs.set(menuOptions.HOME, "homePageContent");
 domPagesIDs.set(menuOptions.EDU, "eduPageContent");
@@ -58,4 +36,4 @@ domPagesIDs.set(portraitMenuOptions.PROJ, "projPageContent");
 
 const domPages = document.querySelectorAll(".contentPage");
 
-export { domPagesIDs, domPages, menuOptions, portraitMenuOptions, factoryMap };
+export { domPagesIDs, domPages, menuOptions, portraitMenuOptions };
