@@ -4,11 +4,11 @@ import { initPageLoad } from "./initPageLoad";
 import { sideBarFactory } from "./sideBar";
 import { navBarFactory } from "./navBar";
 import { headerBarFactory } from "./headerBar";
-
-// Data
-//------------------------------------------------------------------------
-let isPortrait = window.screen.availWidth < window.screen.availHeight && window.screen.availWidth < 1200;
-//------------------------------------------------------------------------
+import { homeFactory } from "./home";
+import { eduSkillsFactory } from "./educationSkills";
+import { expFactory } from "./experience";
+import { contactFactory } from "./contact";
+import { projectFactory } from "./project";
 
 // Support
 //------------------------------------------------------------------------
@@ -19,15 +19,22 @@ const pageSwitcher = (menuOption) => {
     domPages.forEach((domPage) => {
         domPage.style.cssText = "display:none;";
     });
-    currentPageObject = factoryMap.get(menuOption)(isPortrait);
     const domPageID = domPagesIDs.get(menuOption);
     document.querySelector(`#${domPageID}`).style.cssText = "display:block;";
 };
 
 const orientationChange = () => {
-    isPortrait = document.body.clientWidth < document.body.clientHeight && window.screen.availWidth < 1200;
+    isPortrait = checkIsPortrait();
     initPageLoad(isPortrait);
-    currentPageObject.switchOrientation(isPortrait);
+    homePage.switchOrientation(isPortrait);
+    contPage.switchOrientation(isPortrait);
+    expPage.switchOrientation(isPortrait);
+    projPage.switchOrientation(isPortrait);
+    eduPage.switchOrientation(isPortrait);
+};
+
+const checkIsPortrait = () => {
+    return window.screen.availWidth < window.screen.availHeight && window.screen.availWidth < 1200;
 };
 //------------------------------------------------------------------------
 
@@ -46,11 +53,16 @@ const interfaceLayer = () => {
 
 // Init
 //------------------------------------------------------------------------
+let isPortrait = checkIsPortrait();
 initPageLoad(isPortrait);
 const sideBar = sideBarFactory(interfaceLayer());
 const navBar = navBarFactory(interfaceLayer());
 const headerBar = headerBarFactory(interfaceLayer());
-let currentPageObject = factoryMap.get(menuOptions.HOME)(isPortrait);
+const homePage = homeFactory(isPortrait);
+const eduPage = eduSkillsFactory(isPortrait);
+const expPage = expFactory(isPortrait);
+const contPage = contactFactory(isPortrait);
+const projPage = projectFactory(isPortrait);
 //------------------------------------------------------------------------
 
 // Events
