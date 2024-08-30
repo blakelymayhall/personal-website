@@ -55,8 +55,13 @@ const interfaceLayer = () => {
         pageSwitcher(menuOption);
     };
 
+    const getIsPortrait = () => {
+        return checkIsPortrait();
+    };
+
     return {
         pageChanged,
+        getIsPortrait,
     };
 };
 //------------------------------------------------------------------------
@@ -70,7 +75,7 @@ const homePage = homeFactory();
 const eduPage = eduSkillsFactory();
 const expPage = expFactory();
 const contPage = contactFactory();
-const projPage = projectFactory();
+const projPage = projectFactory(interfaceLayer());
 
 let isPortrait = checkIsPortrait();
 orientationChange();

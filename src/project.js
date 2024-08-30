@@ -2,7 +2,7 @@ import { projDatas } from "./data/projectData";
 import { monthNames, calculateElapsedTime } from "./support/elapsedTime";
 import { pictureOverlayFactory } from "./support/pictureOverlay";
 
-const projectFactory = () => {
+const projectFactory = (interfaceLayer) => {
     // Data
     //------------------------------------------------------------------------
     const screenshotOverlay = pictureOverlayFactory();
@@ -42,7 +42,7 @@ const projectFactory = () => {
             const link_a = document.createElement("a");
             link_a.href = link;
             link_a.textContent = link;
-            link_a.target="_blank";
+            link_a.target = "_blank";
             link_li.appendChild(link_a);
             projLinksUL.appendChild(link_li);
         });
@@ -52,7 +52,9 @@ const projectFactory = () => {
             imgDOM.src = screenshot;
             imgDOM.classList.add("projScreenShot");
             imgDOM.addEventListener("click", () => {
-                screenshotOverlay.activate(imgDOM, true);
+                if (!interfaceLayer.getIsPortrait()) {
+                    screenshotOverlay.activate(imgDOM, true);
+                }
             });
             projScreenShots.appendChild(imgDOM);
         });

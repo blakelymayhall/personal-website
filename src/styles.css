@@ -817,11 +817,11 @@ ul {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: 31% 31% 31%;
-    grid-template-rows: 50%;
-    grid-auto-rows: 50%;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 210px;
+    grid-auto-rows: 210px;
     grid-auto-flow: dense;
-    gap: 1rem;
+    gap: 5rem;
     margin-top: 2rem;
 }
 
@@ -833,17 +833,9 @@ ul {
     gap:5rem;
 }
 
-@media (max-width: 1180px) {
-    .expCards {
-        grid-template-columns: 31% 31% ;
-        grid-template-rows: 50%;
-        grid-auto-rows: 50%;
-    }
-}
-
 .expCard {
-    width: 300px;
-    height: 230px;
+    width: 100%;
+    height: 200px;
     background-color: whitesmoke;
     border-color: black;
     border-style: solid;
@@ -891,7 +883,7 @@ ul {
 }
 
 .expSectionBreak {
-    margin-top: 2rem;
+    margin-top: 4rem;
     height: 0.2rem;
     width: 100%;
     background-color: gray;
@@ -1057,6 +1049,7 @@ ul {
 }
 
 .projTitle.portrait {
+    max-width: 90vw;
     font-size: 4rem;
 }
 
@@ -1066,6 +1059,7 @@ ul {
 }
 
 .projShortDesc.portrait {
+    max-width: 90vw;
     font-size: 2.6rem;
 }
 
@@ -1086,7 +1080,7 @@ ul {
 }
 
 .projDesc.portrait {
-    max-width: 80%;
+    max-width: 90vw;
     font-size: 2rem;
 }
 
@@ -1095,10 +1089,13 @@ ul {
     font-size: 1.3rem;
     text-decoration: underline;
     margin-bottom: 10px;
+    max-width: 90vw;
 }
 
 .projScreenShotTitle.portrait, .projLinksTitle.portrait, .projSkillsTitle.portrait {
     font-size: 2.6rem;
+    max-width: 90vw;
+    word-break: break-all;
 }
 
 .projLinks {
@@ -1122,6 +1119,8 @@ ul {
 
 .projLinks ul li.portrait {
     font-size: 2.6rem;
+    width: 90vw;
+    word-break: break-all;
 }
 
 .projScreenShots {
@@ -1138,7 +1137,8 @@ ul {
 }
 
 .projScreenShots.portrait {
-    grid-template-columns: 33% 33%;
+    width: 200vw;
+    grid-template-columns: 20% 20%;
     grid-template-rows: 400px;
     grid-auto-rows: 400px;
 }
@@ -1172,8 +1172,8 @@ ul {
     max-width: 100vw;
     min-width: 100vw;
     grid-template-columns: 250px 250px 250px;
-    grid-template-rows: 9rem;
-    grid-auto-rows: 9rem;
+    grid-template-rows: 5rem;
+    grid-auto-rows: 5rem;
     gap: 5rem;
     margin-left: -1.75rem;
 }
@@ -1188,7 +1188,7 @@ ul {
 }
 
 .projSkills li.portrait {
-    font-size: 2.6rem;
+    font-size: 2rem;
     margin: 0 3rem;
     min-width: 100%;
     max-width: 100%;
