@@ -49,6 +49,7 @@ const expFactory = () => {
         dateString =
             dateString + (elapsedYears > 0 ? ` (${elapsedYears} yrs ${elapsedMos} mos)` : ` (${elapsedMos} mos)`);
         newSectionDOM.querySelector(".expDate").textContent = dateString;
+        newSectionDOM.querySelector(".expDesc").textContent = companyData.jobDesc;
         desktopExpPageContent.appendChild(newSectionDOM);
         return newSectionDOM;
     };

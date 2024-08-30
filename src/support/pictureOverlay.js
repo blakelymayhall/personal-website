@@ -7,7 +7,7 @@ const pictureOverlayFactory = () => {
 
     // Support
     //------------------------------------------------------------------------
-    const activate = (imgDOM, isScreenShot = null, width=null) => {
+    const activate = (imgDOM, isScreenShot = null) => {
         overlayActive = true;
         clickedPicture = imgDOM;
         document.querySelector("#maskOverlay").style.display = "block"

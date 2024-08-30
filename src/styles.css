@@ -99,6 +99,7 @@ ul {
     border-width: 2px;
     border-radius: 2rem;
     width: 40vw;
+    aspect-ratio: 1.5 / 1;
 }
 
 /* #region Desktop Side Bar */
@@ -649,8 +650,8 @@ ul {
     height: 100%;
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
-    grid-template-rows: 40%;
-    grid-auto-rows: 40%;
+    grid-template-rows: 30%;
+    grid-auto-rows: 30%;
     grid-auto-flow: dense;
     gap: 2rem;
     margin-top: 2rem;
@@ -794,6 +795,7 @@ ul {
 .expDate, .expDesc {
     font-family: 'Roboto';
     font-size: 1rem;
+    white-space: pre-line;
 }
 
 .expDate.portrait {
@@ -841,7 +843,7 @@ ul {
 
 .expCard {
     width: 300px;
-    height: 200px;
+    height: 230px;
     background-color: whitesmoke;
     border-color: black;
     border-style: solid;
@@ -1079,7 +1081,8 @@ ul {
 .projDesc {
     font-family: 'Roboto';
     font-size: 1rem;
-    max-width: 600px;
+    max-width: 800px;
+    white-space: pre-line;
 }
 
 .projDesc.portrait {
@@ -1124,7 +1127,7 @@ ul {
 .projScreenShots {
     min-width: 1160px;
     width: 100%;
-    min-height: 400px;
+    min-height: 300px;
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;
     grid-template-rows: 200px;
