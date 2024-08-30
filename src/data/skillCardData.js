@@ -22,12 +22,48 @@ const git_skill = new SkillCard("Git (GitLab & GitHub)", [
     "Ag Leader Technology",
     "The Odin Project",
 ]);
+const ci_cd_skill = new SkillCard("CI / CD", [
+    "Ag Leader Technology",
+]);
+const qt_qml_skill = new SkillCard("Qt & QML", [
+    "Ag Leader Technology",
+]);
+const squish_skill = new SkillCard("Squish (GUI Test Automation)", [
+    "Ag Leader Technology",
+]);
+const lint_skill = new SkillCard("Lint & Auto Code Formatting", [
+    "The Boeing Company",
+    "Ag Leader Technology",
+    "The Odin Project",
+]);
+const linux_skill = new SkillCard("Linux", [
+    "The Boeing Company",
+    "Ag Leader Technology",
+    "The Odin Project",
+]);
+const webdev_skill = new SkillCard("HTML / CSS", [
+    "The Boeing Company",
+    "The Odin Project",
+]);
+const js_skill = new SkillCard("Javascript", [
+    "The Boeing Company",
+    "The Odin Project",
+]);
+
+
 
 let skillCards = [];
 skillCards.push(c_cpp_skill);
 skillCards.push(python_skill);
 skillCards.push(c_sharp_skill);
 skillCards.push(mat_sim_skill);
+skillCards.push(linux_skill);
 skillCards.push(git_skill);
+skillCards.push(ci_cd_skill);
+skillCards.push(qt_qml_skill);
+skillCards.push(squish_skill);
+skillCards.push(lint_skill);
+skillCards.push(webdev_skill);
+skillCards.push(js_skill);
 
 export { skillCards };

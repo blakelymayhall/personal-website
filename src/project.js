@@ -21,7 +21,7 @@ const projectFactory = () => {
         newSectionDOM.dataset.projID = projectData.projID;
         newSectionDOM.querySelector(".projTitle").textContent = projectData.projectTitle;
         newSectionDOM.querySelector(".projShortDesc").textContent = projectData.projectShortDesc;
-        newSectionDOM.querySelector(".projDesc").src = projectData.projectDesc;
+        newSectionDOM.querySelector(".projDesc").textContent = projectData.projectDesc;
         let dateString = "";
         const startDate = projectData.startMonYear;
         let endDate = projectData.endMonYear;
@@ -42,6 +42,7 @@ const projectFactory = () => {
             const link_a = document.createElement("a");
             link_a.href = link;
             link_a.textContent = link;
+            link_a.target="_blank";
             link_li.appendChild(link_a);
             projLinksUL.appendChild(link_li);
         });
