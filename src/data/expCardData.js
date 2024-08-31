@@ -51,7 +51,7 @@ const boeingTest1 = new ExpCard("Flight Dynamics and Control", [
     "Developed Monte Carlo simulations on flight model to assess vehicle capabilities and derive operational domain",
     "Investigated and implemented inertial coupling compensator simulated to eliminate system failures at abnormally low employment speeds"
 ]);
-const boeingTest2 = new ExpCard("DevOps Software", [
+const boeingTest2 = new ExpCard("DevOps Software Engineering", [
     "Developed Google Earth integrated GUI for internal & external customers to utilize weapon performance models (.DLLs)", 
     "Enabled process for C++ simulation capability on Linux High Performance Computing clusters ",
     "Developed C++ based REPL program and VSCode extension for Boeing internal scripting language" 
