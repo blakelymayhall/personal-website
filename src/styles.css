@@ -1206,7 +1206,7 @@ ul {
     display: none;
 }
 
-#blogContainter {
+#blogContainer {
     height: 100%;
     width: 600px;
     background-color: rgb(189, 217, 192);
@@ -1220,7 +1220,7 @@ ul {
     padding: 1.2rem;
 }
 
-#blogContainter.portrait {
+#blogContainer.portrait {
     width: 100vw;
     margin: 0;
     padding: 3rem 0;
