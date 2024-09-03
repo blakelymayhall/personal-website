@@ -1195,3 +1195,104 @@ ul {
 }
 
 /* #endregion */
+
+/* #region Desktop blog */
+
+#blogPageContent {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    display: none;
+}
+
+#blogContainter {
+    height: 100%;
+    width: 600px;
+    background-color: rgb(189, 217, 192);
+    margin-left: 25%;
+    margin-right: 25%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem;
+}
+
+#blogContainter.portrait {
+    width: 100vw;
+    margin: 0;
+    padding: 3rem 0;
+    background-color: rgb(234, 230, 229);
+}
+
+.blogCard {
+    width: 80%;
+    min-height: 250px;
+    background-color: whitesmoke;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 1.2rem;
+}
+
+.blogCard.portrait {
+    min-height: 600px;
+}
+
+.blogCard.portrait:last-of-type {
+    margin-bottom: 400px;
+}
+
+.blogTitle {
+    font-family: 'Roboto';
+    font-size: 1.3rem;
+}
+
+.blogTitle.portrait {
+    font-size: 2.6rem;
+}
+
+.blogDate {
+    font-family: 'Roboto';
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+}
+
+.blogDate.portrait {
+    font-size: 2rem;
+}
+
+.blogContentRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.blogDesc {
+    font-family: 'Roboto';
+    font-size: 1.1rem;
+    max-width: 60%;
+}
+
+.blogDesc.portrait {
+    font-size: 2.2rem;
+    max-width: 50%;
+}
+
+.blogImg {
+    max-width: 35%;
+    aspect-ratio: 1 / 1;
+    margin-right: 10px;
+}
+
+.blogImg.portrait {
+    max-width: 40%;
+}
+
+/* #endregion */
