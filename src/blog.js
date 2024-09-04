@@ -27,6 +27,8 @@ const blogFactory = (interfaceLayer) => {
                     screenshotOverlay.activate(imgDOM, true);
                 }
             });
+        } else {
+            newSectionDOM.querySelector(".blogDesc").style.cssText = "max-width: 95%;"
         }
         blogContainer.appendChild(newSectionDOM);
     };
