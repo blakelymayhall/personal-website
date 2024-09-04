@@ -49,6 +49,12 @@ const js_skill = new SkillCard("Javascript", [
     "The Boeing Company",
     "The Odin Project",
 ]);
+const ui_skill = new SkillCard("UI / UX Design", [
+    "The Boeing Company",
+    "Ag Leader Technology",
+    "The Odin Project",
+]);
+
 
 
 
@@ -65,5 +71,6 @@ skillCards.push(squish_skill);
 skillCards.push(lint_skill);
 skillCards.push(webdev_skill);
 skillCards.push(js_skill);
+skillCards.push(ui_skill);
 
 export { skillCards };

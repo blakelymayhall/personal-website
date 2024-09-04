@@ -650,8 +650,8 @@ ul {
     height: 100%;
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
-    grid-template-rows: 30%;
-    grid-auto-rows: 30%;
+    grid-template-rows: 20%;
+    grid-auto-rows: 20%;
     grid-auto-flow: dense;
     gap: 2rem;
     margin-top: 2rem;
@@ -796,6 +796,10 @@ ul {
     font-family: 'Roboto';
     font-size: 1rem;
     white-space: pre-line;
+}
+
+.expDesc {
+    margin-top: 1rem;
 }
 
 .expDate.portrait {
@@ -1126,14 +1130,13 @@ ul {
 .projScreenShots {
     min-width: 1160px;
     width: 100%;
-    min-height: 300px;
+    min-height: 200px;
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;
     grid-template-rows: 200px;
     grid-auto-rows: 200px;
     grid-auto-flow: dense;
     gap: 3rem;
-    margin-top: 2rem;
 }
 
 .projScreenShots.portrait {
@@ -1289,6 +1292,7 @@ ul {
     max-width: 35%;
     aspect-ratio: 1 / 1;
     margin-right: 10px;
+    cursor: pointer; 
 }
 
 .blogImg.portrait {

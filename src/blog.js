@@ -17,7 +17,7 @@ const blogFactory = (interfaceLayer) => {
         newSectionDOM.querySelector(".blogTitle").textContent = blogData.blogCardTitle;
         newSectionDOM.querySelector(
             ".blogDate"
-        ).textContent = `${blogData.monDayYear[0]}-${blogData.monDayYear[1]}-${blogData.monDayYear[2]}`;
+        ).textContent = `${blogData.monDayYear[0]} ${blogData.monDayYear[1]}, ${blogData.monDayYear[2]}`;
         newSectionDOM.querySelector(".blogDesc").textContent = blogData.blogDesc;
         if (blogData.blogImg != null) {
             const imgDOM = newSectionDOM.querySelector(".blogImg");
