@@ -1026,7 +1026,7 @@ ul {
 
 /* #region Desktop project */
 
-#projPageContent {
+#projPageContent, #currPageContent {
     height: 100%;
     display: none;
 }
