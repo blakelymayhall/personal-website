@@ -9,6 +9,7 @@ import { expFactory } from "./experience";
 import { contactFactory } from "./contact";
 import { projectFactory } from "./project";
 import { blogFactory } from "./blog";
+import { currentActivityFactory } from "./currentActivity";
 
 // Support
 //------------------------------------------------------------------------
@@ -43,6 +44,7 @@ const orientationChange = () => {
     projPage.switchOrientation(isPortrait);
     eduPage.switchOrientation(isPortrait);
     blogPage.switchOrientation(isPortrait);
+    currentPage.switchOrientation(isPortrait);
 };
 
 const checkIsPortrait = () => {
@@ -79,6 +81,7 @@ const expPage = expFactory();
 const contPage = contactFactory();
 const projPage = projectFactory(interfaceLayer());
 const blogPage = blogFactory(interfaceLayer());
+const currentPage = currentActivityFactory(interfaceLayer());
 
 let isPortrait = checkIsPortrait();
 orientationChange();

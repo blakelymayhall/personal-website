@@ -96,7 +96,7 @@ const aglKey = new CompanyInfo(
     "high-level skills that I exercised and learned with Ag Leader Technology:"
 );
 let aglData = [];
-const aglTest1 = new ExpCard("Embedded Software Design (C++)", [
+const aglTest1 = new ExpCard("Embedded Software Engineering (C++)", [
     "Integrated standardized agricultural software into a modern device framework and enhanced the user interface (QML)", 
     "Developed simulation strategy to prove-out new system feature prior to field testing",
     "Diagnose and disposition crashes via core-file debugging"
