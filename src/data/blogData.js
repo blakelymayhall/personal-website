@@ -27,7 +27,7 @@ const card4 = new BlogCard(
 );
 const card3 = new BlogCard(
     "Introducing Regular Expressions",
-    ["June", "4", "2024"],
+    ["July", "6", "2024"],
     "I have had the itch to read some non-fiction recently, and computer science / programming skills are a goto when " + 
     "I want to learn something new. I found this book \"Introducing Regular Expressions\" because I have been exposed " + 
     "to RegEx through various working experiences and thought it was time to formalize my education. Perhaps a " +
@@ -36,7 +36,7 @@ const card3 = new BlogCard(
 );
 const card2 = new BlogCard(
     "Dark Tower Series",
-    ["July", "14", "2024"],
+    ["June", "14", "2024"],
     "Wow. A year's long reading journey finally finished (well, the main series anyway). I started reading / listening " +
     "to the Dark Tower series by Stephen King after being a King fan for several years. It started with \"It\" and " + 
     "then Pet Semetary, Carrie, and 11.22.63.. until I could ignore the authors Magnum Opus no longer. What a " +
