@@ -6,6 +6,12 @@ import etchASketch from "../assets/etch_a_sketch.gif";
 import mouseTrap from "../assets/mouseTrap.gif";
 import mouseTrap2 from "../assets/mouseTrap2.gif";
 import scrimmageImg from "../assets/scrimmage.gif";
+import war from "../assets/war1.png";
+import war1 from "../assets/war2.png";
+import war2 from "../assets/war_game.gif";
+import war_test1 from "../assets/war_tests.gif"
+import war_test2 from "../assets/war_test_code.png"
+import war3 from "../assets/war_gameplay.gif"
 
 function ProjCard(
     projectTitle,
@@ -29,7 +35,27 @@ function ProjCard(
 }
 
 let projDatas = [];
-
+const warProject = new ProjCard(
+    "War - Card Game",
+    "Video Game Development in Unity",
+    ["June", "2024"],
+    ["September", "2024"],
+    'I had some inspiration to make another unity game. Inspired by a recent game I played on Steam, \'Balatro\', I ' +
+    'wanted to make a card game and see what I could add on top of the original rules. I have found via ' +
+    "past experiences that my best work comes from starting small in scope and expanding as new ideas pop into my head. " +
+    "I also wanted to take the opportunity to apply some of the project/product management techniques I learned from my " + 
+    "experience working with Ag Leader Technology's AGILE/SCRUM implementation.\r\n\r\n" + 'For now, I have worked to ' +
+    'complete the original base-game in unity. War is a simple game with many edge cases - two players flip cards, ' +
+    'the player with the lower rank cards loses and the two cards go to the winner\'s burn pile for use in the following' +
+    'round. Ties are adjudicated based on remaining cards.\r\n\r\nDuring the course of development, I found myself '+ 
+    'stalled trying to get the edge cases to work. I thought this was a wonderful opportunity to learn about writing ' +
+    'unit tests FIRST to get the logic right, and be confident that it stays correct for future code updates.\r\n\r\n' + 
+    'Additionally, I animated the cards motion. My first time working with animations, and I think it looks fun!',
+    ["https://github.com/blakelymayhall/Unity_War_CardGame", 
+        "https://blakelycmayhall.atlassian.net/jira/software/projects/UWC/boards/2"],
+    [war, war1, war2, war_test1, war_test2, war3],
+    ["Unity", "Git & GitHub", "C#", "Unit Tests", "Animation", "Object Oriented Programming"]
+);
 const odinProject = new ProjCard(
     "The Odin Project",
     "Full Stack Web Development in JavaScript",
@@ -101,6 +127,7 @@ const csdbProj = new ProjCard(
     [scrimmageImg],
     ["C++", "Distributed System Simulation", "Git", "Asynchronous Programming", "Object Oriented Programming", "Autonomy", "Interface Control Design", "Collaborative Vehicle Engineering"]
 );
+projDatas.push(warProject);
 projDatas.push(odinProject);
 projDatas.push(mouseTrapProj);
 projDatas.push(csdbProj);

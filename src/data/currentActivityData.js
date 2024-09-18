@@ -1,6 +1,5 @@
-import war from "../assets/war1.png";
-import war1 from "../assets/war2.png";
-import war2 from "../assets/war_game.gif";
+import pkm_tw from "../assets/pkm_tw1.png";
+import pkm_tw1 from "../assets/pkm_tw.gif";
 
 function CurrentActivityCard(
     projectTitle,
@@ -22,24 +21,21 @@ function CurrentActivityCard(
 }
 
 const currentActivityData = new CurrentActivityCard(
-    "War - Card Game",
+    "Pokemon Style Game",
     "Video Game Development in Unity",
-    ["April", "2024"],
+    ["November", "2023"],
     ["Present"],
     [
-        "https://github.com/blakelymayhall/Unity_War_CardGame",
-        "https://blakelycmayhall.atlassian.net/jira/software/projects/UWC/boards/2",
+        "https://github.com/blakelymayhall/PKM_TW",
+        "https://blakelycmayhall.atlassian.net/jira/software/projects/PTW/boards/1",
     ],
-    "After a long hiatus from Unity game development (learning from The Odin Project), I decided to pick the mantle " +
-    "back up with something well-defined and relatively short in scope. I have found via " +
-    "past experiences that my best work come from starting small and scope and expanding as new ideas pop into my head. " +
-    "I also wanted to take the opportunity to apply some of the project/product management techniques I learned from my " + 
-    "experience working at Ag Leader Technology's AGILE/SCRUM implementation.\r\n\r\n" + 
-    "The concept is simple - two decks, one of which is the player's, and both players draw. The highest ranking card " + 
-    "wins the hand and the loser's card is \'absorbed\' into the winner's deck for the following round. Ties result in " + 
-    "a \'war\' where three cards are drawn and the sum of the hand determines the winner.\r\n\r\n" + 
-    "Future goals are: menus, animations, modifiers (rule modifications, effect cards / power ups)" ,
-    [war, war1, war2]
+    "For a long-while, I've had an ambition to create a game similar to Pokemon, where there is an \'overworld\' " +
+    "RPG perspective and a \'battle'\ mini-game perspective. In my game, the combat or mini-game is intended to operate " +
+    "like the old flash game \'Territory War\' or \'Worms\' while the overworld would operate much like Pokemon, where " +
+    "you collect teammates to help you in your journey.\r\n\r\nOf course, as I have learned, planning and cutting the work" + 
+    "into sizable chunks is imperative in completing a project with wide scope. I have ben tracking this work in Jira " + 
+    "and focusing on fluid, smooth overworld movement and NPC interactions for now.",
+    [pkm_tw, pkm_tw1]
 );
 
 export { currentActivityData };

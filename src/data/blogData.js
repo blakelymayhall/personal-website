@@ -1,6 +1,7 @@
 import regex_img from "../assets/regex.jpg";
 import gunslinger_img from "../assets/gunslinger.jpg";
 import interview_img from "../assets/interview.jpg";
+import pball from "../assets/IMG_5706.jpeg"
 
 function BlogCard(
     blogCardTitle,
@@ -15,6 +16,14 @@ function BlogCard(
     this.blogImg = blogImg;
 }
 
+const card5 = new BlogCard(
+    "Pickleball League!",
+    ["September", "18", "2024"],
+    "It has been about half a year since I have been in a pickleball league, but I am starting up again! " + 
+    "I am super excited to be playing again. Fun way to stay active and be a little competitive. Last season we " +
+    "went undefeated but lost first round in the tourney. Hoping for a deeper run this time.",
+    pball
+);
 const card4 = new BlogCard(
     "AMC's Interview with the Vampire",
     ["September", "4", "2024"],
@@ -55,6 +64,7 @@ const card1 = new BlogCard(
 );
 
 let blogCards = [];
+blogCards.push(card5);
 blogCards.push(card4);
 blogCards.push(card3);
 blogCards.push(card2);
