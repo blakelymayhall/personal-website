@@ -9,9 +9,9 @@ import scrimmageImg from "../assets/scrimmage.gif";
 import war from "../assets/war1.png";
 import war1 from "../assets/war2.png";
 import war2 from "../assets/war_game.gif";
-import war_test1 from "../assets/war_tests.gif"
-import war_test2 from "../assets/war_test_code.png"
-import war3 from "../assets/war_gameplay.gif"
+import war_test1 from "../assets/war_tests.gif";
+import war_test2 from "../assets/war_test_code.png";
+import war3 from "../assets/war_gameplay.gif";
 
 function ProjCard(
     projectTitle,
@@ -35,24 +35,63 @@ function ProjCard(
 }
 
 let projDatas = [];
+
+const cppFakerProject = new ProjCard(
+    "Faker-Cxx: Geodesic Unit Test Fixup",
+    "Open-Source Software Contribution",
+    ["November", "2024"],
+    ["November", "2024"],
+    "I noticed that my public portfolio was lacking in my most experienced language - C++! " +
+        "I have always had an interest in contributing to open-source software since I use OSS on a daily basis. " +
+        "I looked around the internet and found a project with an open issue related to my experience with geodesic " +
+        "coordinate systems. The task (linked below) was to determine and disposition why a unit test was " +
+        "occasionally failing. The test in question intended to generate a random geodesic (lat/lon) coordinate " +
+        "within a specified radius of an origin point. It was intermittently failing.\r\n\r\n" +
+        "My first step was to identify the root-cause. Reviewing the test, I noticed quickly that the point generation " +
+        "and comparison was using the Haversine method to calculate distance between geodesic points. " +
+        "In my experience, I've seen this method have large relative errors due to its assumption of a spherical Earth " +
+        "rather than the WGS84 ellipsoidal model. I modified the source code for the test " +
+        "to std::cout the two geodesic points, and then I made a bash script to run the test in a " +
+        "loop until it failed. When I had the points in hand, I could use external code (Python) to use a more accurate " +
+        "geodesic comparison method to confirm my suspicion that the test was failing because either/and: \r\n\r\n" +
+        "1) The algorithm that generated lat,lon pairs in faker::location::nearbyGPSCoordinate was subject to error " +
+        "due to a spherical Earth assumption. This means it could potentially generate a lat,lon coordinate outside " +
+        "the radius parameter\r\n\r\n" +
+        "2) The algorithm that compared two lat,lon coordinates in location_test was subject to position error due " +
+        "to a spherical Earth assumption. This means it could erroneously calculate larger distances between " +
+        "coordinates than is true.\r\n\r\n" +
+        "The repair was relatively simple - implement the more accurate Vincenty method to calculate and compare the " +
+        "two geodesic coordinates.",
+    [
+        "https://github.com/cieslarmichal/faker-cxx",
+        "https://github.com/cieslarmichal/faker-cxx/issues/999",
+        "https://en.wikipedia.org/wiki/Vincenty%27s_formulae",
+    ],
+    [],
+    ["C++", "Google Test", "CMake", "Git & GitHub", "Unit Tests", "Geodesic Coordinates"]
+);
+
 const warProject = new ProjCard(
     "War - Card Game",
     "Video Game Development in Unity",
     ["June", "2024"],
     ["September", "2024"],
-    'I had some inspiration to make another unity game. Inspired by a recent game I played on Steam, \'Balatro\', I ' +
-    'wanted to make a card game and see what I could add on top of the original rules. I have found via ' +
-    "past experiences that my best work comes from starting small in scope and expanding as new ideas pop into my head. " +
-    "I also wanted to take the opportunity to apply some of the project/product management techniques I learned from my " + 
-    "experience working with Ag Leader Technology's AGILE/SCRUM implementation.\r\n\r\n" + 'For now, I have worked to ' +
-    'complete the original base-game in unity. War is a simple game with many edge cases - two players flip cards, ' +
-    'the player with the lower rank cards loses and the two cards go to the winner\'s burn pile for use in the following' +
-    'round. Ties are adjudicated based on remaining cards.\r\n\r\nDuring the course of development, I found myself '+ 
-    'stalled trying to get the edge cases to work. I thought this was a wonderful opportunity to learn about writing ' +
-    'unit tests FIRST to get the logic right, and be confident that it stays correct for future code updates.\r\n\r\n' + 
-    'Additionally, I animated the cards motion. My first time working with animations, and I think it looks fun!',
-    ["https://github.com/blakelymayhall/Unity_War_CardGame", 
-        "https://blakelycmayhall.atlassian.net/jira/software/projects/UWC/boards/2"],
+    "I had some inspiration to make another unity game. Inspired by a recent game I played on Steam, 'Balatro', I " +
+        "wanted to make a card game and see what I could add on top of the original rules. I have found via " +
+        "past experiences that my best work comes from starting small in scope and expanding as new ideas pop into my head. " +
+        "I also wanted to take the opportunity to apply some of the project/product management techniques I learned from my " +
+        "experience working with Ag Leader Technology's AGILE/SCRUM implementation.\r\n\r\n" +
+        "For now, I have worked to " +
+        "complete the original base-game in unity. War is a simple game with many edge cases - two players flip cards, " +
+        "the player with the lower rank cards loses and the two cards go to the winner's burn pile for use in the following" +
+        "round. Ties are adjudicated based on remaining cards.\r\n\r\nDuring the course of development, I found myself " +
+        "stalled trying to get the edge cases to work. I thought this was a wonderful opportunity to learn about writing " +
+        "unit tests FIRST to get the logic right, and be confident that it stays correct for future code updates.\r\n\r\n" +
+        "Additionally, I animated the cards motion. My first time working with animations, and I think it looks fun!",
+    [
+        "https://github.com/blakelymayhall/Unity_War_CardGame",
+        "https://blakelycmayhall.atlassian.net/jira/software/projects/UWC/boards/2",
+    ],
     [war, war1, war2, war_test1, war_test2, war3],
     ["Unity", "Git & GitHub", "C#", "Unit Tests", "Animation", "Object Oriented Programming"]
 );
@@ -86,7 +125,7 @@ const odinProject = new ProjCard(
         "HTML / CSS",
         "Javascript",
         "Lint",
-        "Asynchronous Programming"
+        "Asynchronous Programming",
     ]
 );
 const mouseTrapProj = new ProjCard(
@@ -122,11 +161,22 @@ const csdbProj = new ProjCard(
         "https://www.afrl.af.mil/News/Article-Display/Article/2634538/afrl-successfully-completes-golden-horde-collaborative-small-diameter-bomb-flig/",
         "https://www.scrimmagesim.org/",
         "https://github.com/gtri/scrimmage/blob/master/src/plugins/motion/FixedWing6DOF/FixedWing6DOF.cpp",
-        "https://www.youtube.com/watch?v=NW37klOQ2xA"
+        "https://www.youtube.com/watch?v=NW37klOQ2xA",
     ],
     [scrimmageImg],
-    ["C++", "Distributed System Simulation", "Git", "Asynchronous Programming", "Object Oriented Programming", "Autonomy", "Interface Control Design", "Collaborative Vehicle Engineering"]
+    [
+        "C++",
+        "Distributed System Simulation",
+        "Git",
+        "Asynchronous Programming",
+        "Object Oriented Programming",
+        "Autonomy",
+        "Interface Control Design",
+        "Collaborative Vehicle Engineering",
+    ]
 );
+
+projDatas.push(cppFakerProject);
 projDatas.push(warProject);
 projDatas.push(odinProject);
 projDatas.push(mouseTrapProj);

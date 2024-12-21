@@ -47,17 +47,22 @@ const projectFactory = (interfaceLayer) => {
             projLinksUL.appendChild(link_li);
         });
         const projScreenShots = newSectionDOM.querySelector(".projScreenShots");
-        projectData.projectScreenShots.forEach((screenshot) => {
-            const imgDOM = document.createElement("img");
-            imgDOM.src = screenshot;
-            imgDOM.classList.add("projScreenShot");
-            imgDOM.addEventListener("click", () => {
-                if (!interfaceLayer.getIsPortrait()) {
-                    screenshotOverlay.activate(imgDOM, true);
-                }
+        if (projectData.projectScreenShots.length == 0) {
+            newSectionDOM.querySelector(".projScreenShotTitle").style.display = "none";
+            newSectionDOM.querySelector(".projScreenShots").style.display = "none";
+        } else {
+            projectData.projectScreenShots.forEach((screenshot) => {
+                const imgDOM = document.createElement("img");
+                imgDOM.src = screenshot;
+                imgDOM.classList.add("projScreenShot");
+                imgDOM.addEventListener("click", () => {
+                    if (!interfaceLayer.getIsPortrait()) {
+                        screenshotOverlay.activate(imgDOM, true);
+                    }
+                });
+                projScreenShots.appendChild(imgDOM);
             });
-            projScreenShots.appendChild(imgDOM);
-        });
+        }
         const projSkills = newSectionDOM.querySelector(".projSkills");
         projectData.projectSkills.forEach((skill) => {
             const newItem = document.createElement("li");

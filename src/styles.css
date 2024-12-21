@@ -1150,6 +1150,10 @@ ul {
     grid-auto-rows: 400px;
 }
 
+#currSection .projScreenShots {
+    padding-bottom: 400px;
+}
+
 @media (max-width: 900px) {
     .projScreenShots {
         grid-template-columns: 200px 200px;
