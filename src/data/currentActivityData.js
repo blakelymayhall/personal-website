@@ -29,12 +29,12 @@ const currentActivityData = new CurrentActivityCard(
         "https://github.com/blakelymayhall/PKM_TW",
         "https://blakelycmayhall.atlassian.net/jira/software/projects/PTW/boards/1",
     ],
-    "For a long-while, I've had an ambition to create a game similar to Pokemon, where there is an \'overworld\' " +
-    "RPG perspective and a \'battle'\ mini-game perspective. In my game, the combat or mini-game is intended to operate " +
-    "like the old flash game \'Territory War\' or \'Worms\' while the overworld would operate much like Pokemon, where " +
-    "you collect teammates to help you in your journey.\r\n\r\nOf course, as I have learned, planning and cutting the work" + 
-    "into sizable chunks is imperative in completing a project with wide scope. I have ben tracking this work in Jira " + 
-    "and focusing on fluid, smooth overworld movement and NPC interactions for now.",
+    "For a long-while, I've had an ambition to create a game similar to Pokemon, where there is an 'overworld' " +
+        "RPG perspective and a 'battle' mini-game perspective. In my game, the combat or mini-game is intended to operate " +
+        "like the old flash game 'Territory War' or 'Worms' while the overworld would operate much like Pokemon, where " +
+        "you collect teammates to help you in your journey.\r\n\r\nOf course, as I have learned, planning and cutting the work " +
+        "into sizable chunks is imperative in completing a project with wide scope. I have ben tracking this work in Jira " +
+        "and focusing on fluid, smooth overworld movement and NPC interactions for now.",
     [pkm_tw, pkm_tw1]
 );
 
